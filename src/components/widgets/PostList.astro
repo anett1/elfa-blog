@@ -76,7 +76,7 @@ const { posts } = Astro.props as PostListProps
   }
 
   .post-item {
-    height: 2.75rem;
+    height: 3.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,12 +97,8 @@ const { posts } = Astro.props as PostListProps
   }
 
   .title {
-    margin: 0;
-    flex-shrink: 1;
-    min-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+    line-height: 1.2rem;
   }
 
   .date {
