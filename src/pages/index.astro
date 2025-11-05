@@ -128,30 +128,65 @@ import img30 from '@/assets/img-30.jpeg'
     .masonry-item:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.12); }
     .masonry-item img { display:block; width:100%; height:auto; }
 
-    /* ========== OFERTA ========== */
+    /* =========================================================
+       OFERTA – ikona po lewej, heading po prawej, tekst poniżej
+       ========================================================= */
     #oferta { border-top:1px solid var(--rule); padding:clamp(40px,6vw,80px) 0; }
     .oferta-grid { display:grid; gap:3rem 2rem; }
     @media (min-width:900px){ .oferta-grid{ grid-template-columns:1fr 1fr; } }
 
-    .oferta-card { border-top:1px solid var(--rule); padding-top:2rem; text-align:left; }
-    .oferta-icon{ display:block; width:clamp(48px,5vw,72px); height:auto; margin:0 0 1rem 0; color:var(--accent-ink); opacity:.9; }
+    .oferta-card { border-top:1px solid var(--rule); padding-top:1.25rem; text-align:left; }
 
-    /* wstążka h3 (biały na brązie) */
+    /* Pasek nagłówkowy (ikona + tytuł) */
+    .oferta-head{
+      display:flex;
+      align-items:center;         /* wyśrodkowanie w pionie ikony i tytułu */
+      gap:.9rem;
+      min-height:48px;
+    }
+    .oferta-icon{
+      width:clamp(36px,4.5vw,56px); /* mniejsza ikona */
+      height:auto;
+      flex:0 0 auto;               /* nie rozciąga się */
+      display:block;
+      color:var(--accent-ink);
+      opacity:.95;
+    }
     #oferta .oferta-card h3{
-      background:var(--accent-ink);
-      color:#fff;
-      display:inline-block;
-      padding:.4em .8em;
-      border-radius:4px;
-      margin-bottom:.8rem;
-      font-size:1rem;
-      font-variant:small-caps;
-      letter-spacing:.03em;
-      box-shadow:0 2px 6px rgba(0,0,0,.08);
+      margin:0;                    /* zero marginesów w pasku nagłówkowym */
+      background:none;
+      color:var(--accent-ink);
+      font-weight:500;
+      font-size:clamp(1.05rem, 2.2vw, 1.35rem);
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      font-variant:normal;
+      line-height:1.2;
     }
 
-    .oferta-card p { margin:.5rem 0 .75rem; line-height:1.55; }
-    .oferta-card ul { margin:.75rem 0 0 1.2rem; display:grid; gap:.3rem; }
+    /* Treści poniżej paska nagłówkowego – zaczynają od lewej krawędzi */
+    .oferta-body{
+      margin-top:.75rem;           /* separacja od paska */
+    }
+    #oferta .oferta-card p{
+      margin:.5rem 0 .65rem;
+      line-height:1.55;
+      text-align:left;             /* wyraźne wyrównanie do lewej */
+      hyphens:none;                /* bez dzielenia wyrazów w tym wariancie */
+    }
+    #oferta .oferta-card ul{
+      margin:.4rem 0 .2rem 0;
+      padding-left:1.1rem;         /* minimalna przestrzeń na punktor */
+      list-style:disc;
+    }
+    #oferta .oferta-card li{ break-inside:avoid; }
+
+    /* Mobile drobne dopieszczenie */
+    @media (max-width:540px){
+      .oferta-head{ gap:.7rem; }
+      .oferta-icon{ width:40px; }
+      #oferta .oferta-card h3{ font-size:1.02rem; }
+    }
 
     /* ========== KONTAKT ========== */
     #kontakt ul { list-style:none; padding-left:0; margin:.5rem 0 1rem; }
@@ -190,53 +225,69 @@ import img30 from '@/assets/img-30.jpeg'
         <div class="oferta-grid">
           <!-- 1. Projektowanie i skład -->
           <article class="oferta-card">
-            <img src="/images/oferta-projekt.svg" alt="Projektowanie i skład publikacji" class="oferta-icon">
-            <h3>Projektowanie i skład publikacji</h3>
-            <p>Pełny proces opracowania graficznego i typograficznego – od koncepcji wizualnej po finalny układ stron. Każdy projekt powstaje z myślą o czytelności i harmonii wizualnej.</p>
-            <ul>
-              <li>Makiety, koncepcje wizualne, moodboardy</li>
-              <li>Dobór krojów pisma i stylu graficznego</li>
-              <li>Projektowanie układów stron i działów</li>
-              <li>Skład książek, magazynów, katalogów</li>
-              <li>Wersje drukowane i elektroniczne (PDF, EPUB)</li>
-            </ul>
+            <div class="oferta-head">
+              <img src="/images/oferta-projekt.svg" alt="Projektowanie i skład publikacji" class="oferta-icon">
+              <h3>Projektowanie i skład publikacji</h3>
+            </div>
+            <div class="oferta-body">
+              <p>Pełny proces opracowania graficznego i typograficznego – od koncepcji wizualnej po finalny układ stron. Każdy projekt powstaje z myślą o czytelności i harmonii wizualnej.</p>
+              <ul>
+                <li>Makiety, koncepcje wizualne, moodboardy</li>
+                <li>Dobór krojów pisma i stylu graficznego</li>
+                <li>Projektowanie układów stron i działów</li>
+                <li>Skład książek, magazynów, katalogów</li>
+                <li>Wersje drukowane i elektroniczne (PDF, EPUB)</li>
+              </ul>
+            </div>
           </article>
 
           <!-- 2. Przygotowanie do druku -->
           <article class="oferta-card">
-            <img src="/images/oferta-druk.svg" alt="Przygotowanie do druku" class="oferta-icon">
-            <h3>Przygotowanie do druku</h3>
-            <p>Kompleksowy prepress – kontrola profili kolorystycznych, spadów, czcionek i rozdzielczości. Pliki dostarczane w standardzie PDF/X.</p>
-            <ul>
-              <li>PDF/X-1a lub PDF/X-4, spady i marginesy bezpieczeństwa</li>
-              <li>Profile CMYK (FOGRA), kontrola TAC i nadlewek</li>
-              <li>Preflight, osadzenie czcionek i obrazów</li>
-              <li>Proofing i doradztwo poligraficzne</li>
-            </ul>
+            <div class="oferta-head">
+              <img src="/images/oferta-druk.svg" alt="Przygotowanie do druku" class="oferta-icon">
+              <h3>Przygotowanie do druku</h3>
+            </div>
+            <div class="oferta-body">
+              <p>Kompleksowy prepress – kontrola profili kolorystycznych, spadów, czcionek i rozdzielczości. Pliki dostarczane w standardzie PDF/X.</p>
+              <ul>
+                <li>PDF/X-1a lub PDF/X-4, spady i marginesy bezpieczeństwa</li>
+                <li>Profile CMYK (FOGRA), kontrola TAC i nadlewek</li>
+                <li>Preflight, osadzenie czcionek i obrazów</li>
+                <li>Proofing i doradztwo poligraficzne</li>
+              </ul>
+            </div>
           </article>
 
           <!-- 3. Konwersja e-booków -->
           <article class="oferta-card">
-            <img src="/images/oferta-ebook.svg" alt="Konwersja e-booków" class="oferta-icon">
-            <h3>Konwersja e-booków</h3>
-            <p>Konwersja publikacji do formatów EPUB3, MOBI i PDF na bazie czystego kodu XHTML i CSS, zgodnie ze standardami W3C, IDPF i WCAG.</p>
-            <ul>
-              <li>Konwersja z DOCX, InDesign, PDF, Markdown</li>
-              <li>Struktura XHTML + CSS, metadane i spis treści</li>
-              <li>EPUB3 i Kindle-ready (Send to Kindle, KDP)</li>
-            </ul>
+            <div class="oferta-head">
+              <img src="/images/oferta-ebook.svg" alt="Konwersja e-booków" class="oferta-icon">
+              <h3>Konwersja e-booków</h3>
+            </div>
+            <div class="oferta-body">
+              <p>Konwersja publikacji do formatów EPUB3, MOBI i PDF na bazie czystego kodu XHTML i CSS, zgodnie ze standardami W3C, IDPF i WCAG.</p>
+              <ul>
+                <li>Konwersja z DOCX, InDesign, PDF, Markdown</li>
+                <li>Struktura XHTML + CSS, metadane i spis treści</li>
+                <li>EPUB3 i Kindle-ready (Send to Kindle, KDP)</li>
+              </ul>
+            </div>
           </article>
 
           <!-- 4. Projekty okładek -->
           <article class="oferta-card">
-            <img src="/images/oferta-okladki.svg" alt="Projekty okładek" class="oferta-icon">
-            <h3>Projekty okładek</h3>
-            <p>Okładki opracowane z uwzględnieniem charakteru książki i grupy odbiorców. Typografia, kolor i forma tworzą spójną kompozycję wizualną.</p>
-            <ul>
-              <li>Projekty koncepcyjne, typograficzne i fotograficzne</li>
-              <li>Dopasowanie do formatu książki i grubości grzbietu</li>
-              <li>Wersje do druku (CMYK) i cyfrowe (RGB)</li>
-            </ul>
+            <div class="oferta-head">
+              <img src="/images/oferta-okladki.svg" alt="Projekty okładek" class="oferta-icon">
+              <h3>Projekty okładek</h3>
+            </div>
+            <div class="oferta-body">
+              <p>Okładki opracowane z uwzględnieniem charakteru książki i grupy odbiorców. Typografia, kolor i forma tworzą spójną kompozycję wizualną.</p>
+              <ul>
+                <li>Projekty koncepcyjne, typograficzne i fotograficzne</li>
+                <li>Dopasowanie do formatu książki i grubości grzbietu</li>
+                <li>Wersje do druku (CMYK) i cyfrowe (RGB)</li>
+              </ul>
+            </div>
           </article>
         </div>
       </div>
@@ -386,7 +437,7 @@ import img30 from '@/assets/img-30.jpeg'
           Osoby zainteresowane skorzystaniem z usług firmy serdecznie zapraszamy do kontaktu.
           Z przyjemnością odpowiemy na wszelkie pytania!
         </p>
-        <p>Aby się z nami skontaktować, możesz:</p>
+        <p><strong>Aby się z nami skontaktować, możesz:</strong></p>
         <ul>
           <li>napisać maila na adres <a href="mailto:aneta.jagla@elfapublikacje.com">aneta.jagla@elfapublikacje.com</a></li>
           <li>wejść na nasze profile w mediach społecznościowych:</li>
