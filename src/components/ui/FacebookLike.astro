@@ -1,0 +1,27 @@
+---
+// Facebook Like Button Component
+// This component displays a Facebook Like button for the current page
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href
+const encodedUrl = encodeURIComponent(pageUrl)
+---
+
+<div class="fb-like-container">
+  <iframe
+    src={`https://www.facebook.com/plugins/like.php?href=${encodedUrl}&width=450&layout=standard&action=like&size=small&share=true&height=35&appId`}
+    width="450"
+    height="35"
+    style="border:none;overflow:hidden"
+    scrolling="no"
+    frameborder="0"
+    allowfullscreen="true"
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+  </iframe>
+</div>
+
+<style>
+  .fb-like-container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+  }
+</style>
