@@ -14,7 +14,7 @@
         <path d="M3 6h18M3 12h18M3 18h18"/>
       </svg>
     </button>
-    <nav id="nav-main" aria-label="Główne">
+    <nav id="nav-main" class="main-nav" aria-label="Główne">
       <a href="/#portfolio">Realizacje</a>
       <a href="/#cennik">Cennik</a>
       <a href="/blog">Blog</a>
@@ -23,7 +23,7 @@
   </div>
 </header>
 
-<style>
+<style is:global>
   header.site{
     --ink:#2a2a2a;
     --ink-soft:#4b4b4b;
@@ -61,8 +61,8 @@
   }
   .nav-toggle svg path{ stroke-linecap:round; }
 
-  nav[aria-label="Główne"]{display:flex; align-items:center; gap:1.2rem}
-  nav[aria-label="Główne"] a{
+  nav.main-nav{display:flex; align-items:center; gap:1.2rem}
+  nav.main-nav a{
     color:var(--ink-soft);
     text-decoration:none;
     letter-spacing:.06em;
@@ -71,7 +71,7 @@
     position:relative;
     padding-bottom:2px;
   }
-  nav[aria-label="Główne"] a::after{
+  nav.main-nav a::after{
     content:'';
     position:absolute;
     bottom:0;
@@ -82,12 +82,12 @@
     transform:scaleX(0);
     transition:transform .2s ease;
   }
-  nav[aria-label="Główne"] a:hover{color:var(--ink)}
-  nav[aria-label="Główne"] a:hover::after{transform:scaleX(1)}
+  nav.main-nav a:hover{color:var(--ink)}
+  nav.main-nav a:hover::after{transform:scaleX(1)}
 
   @media(max-width:899px){
     .nav-toggle{display:inline-flex}
-    nav[aria-label="Główne"]{
+    nav.main-nav{
       position:absolute; right:0; top:calc(100% + 8px);
       background:var(--bg); border:1px solid var(--rule); border-radius:12px;
       padding:.5rem; box-shadow:var(--shadow);
@@ -95,8 +95,8 @@
       overflow:visible; white-space:normal; opacity:0; visibility:hidden;
       transform:translateY(-6px); transition:.2s ease;
     }
-    nav[aria-label="Główne"].open{opacity:1; visibility:visible; transform:translateY(0)}
-    nav[aria-label="Główne"] a{padding:.6rem .4rem; font-size:1rem}
+    nav.main-nav.open{opacity:1; visibility:visible; transform:translateY(0)}
+    nav.main-nav a{padding:.6rem .4rem; font-size:1rem}
   }
 </style>
 
