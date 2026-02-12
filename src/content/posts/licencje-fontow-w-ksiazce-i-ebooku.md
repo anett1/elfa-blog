@@ -5,7 +5,7 @@ description: 'Czy można użyć fontu w książce drukowanej i e-booku bez dodat
 tags: ['skład', 'typografia', 'self-publishing', 'prawo autorskie', 'ebooki', 'dla autorów']
 slug: 'licencje-fontow-w-ksiazce-i-ebooku'
 cover: '/_assets/licencje-fontow-w-ksiazce-i-ebooku.png'
-ogImage: 'https://elfapublikacje.com/images/licencje-fontow.jpg'
+ogImage: '/_assets/licencje-fontow-w-ksiazce-i-ebooku.png'
 ---
 
 ![_ebook-formats](./_assets/licencje-fontow-w-ksiazce-i-ebooku.png)
