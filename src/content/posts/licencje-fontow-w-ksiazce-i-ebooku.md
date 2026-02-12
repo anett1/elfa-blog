@@ -51,11 +51,11 @@ Oznacza to, że zakup licencji desktop nie zawsze automatycznie uprawnia do osad
 
 ---
 
-## Google Fonts i bezpieczeństwo w e-bookach
+## Google Fonts — fonty na licencjach open source
 
 Dobrym przykładem fontów open source są kroje dostępne w Google Fonts. Większość z nich udostępniana jest na licencjach takich jak SIL Open Font License (OFL) lub Apache 2.0.
 
-Oznacza to, że można je legalnie wykorzystywać także w projektach komercyjnych — w tym w książkach drukowanych, sprzedażowych PDF-ach oraz e-bookach w formacie EPUB. Licencje te zazwyczaj pozwalają również na osadzanie fontów w plikach oraz ich modyfikację zgodnie z warunkami umowy.
+Oznacza to, że można je bezpłatnie, legalnie wykorzystywać także w projektach komercyjnych — w tym w książkach drukowanych, sprzedażowych PDF-ach oraz e-bookach w formacie EPUB. Licencje te zazwyczaj pozwalają również na osadzanie fontów w plikach oraz ich modyfikację zgodnie z warunkami umowy.
 
 To właśnie dlatego Google Fonts są tak chętnie wybierane w self-publishingu — zapewniają dużą swobodę użycia i ograniczają ryzyko niejasności prawnych, szczególnie w publikacjach elektronicznych, gdzie font staje się osobnym plikiem wewnątrz EPUB-a.
 
@@ -134,3 +134,9 @@ To ta osoba powinna posiadać odpowiednią licencję — zgodnie z zapisami EULA
 Typografia to element profesjonalnego wydania książki. Dobrze dobrany krój pisma buduje klimat publikacji, ale równie ważne jest to, aby jego użycie było zgodne z prawem.
 
 Świadomość licencyjna nie jest dziś dodatkiem — jest częścią odpowiedzialnego self-publishingu.
+
+---
+
+Jeśli planujesz przygotować książkę do druku, stworzyć poprawny EPUB albo po prostu zależy Ci na czytelnym i dopracowanym składzie — zapraszam do kontaktu.
+
+**[Elfa Publikacje](https://elfapublikacje.com/)**
