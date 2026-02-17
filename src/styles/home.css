@@ -31,7 +31,21 @@
   -webkit-hyphens: none;
   -ms-hyphens: none;
 
+  /* Allow full-bleed sections (e.g. .hero) to break out to 100vw */
+  overflow-x: visible;
+}
+
+/* Prevent horizontal scrollbars on the home page while still allowing
+   full-bleed sections to render outside inner containers. */
+body.page-home {
   overflow-x: clip;
+}
+
+/* The site header lives inside the centered/max-width body.
+   On the home page the hero is full-bleed, so move the separator line
+   onto the hero to keep it full width. */
+body.page-home header.site {
+  border-bottom: none !important;
 }
 
 /* =========================================================
@@ -88,10 +102,12 @@
   /* horizontal spacing removed so hero touches edges */
   padding-inline: 0;
 
-  /* preserve vertical rhythm */
-  padding-top: clamp(2rem, 5vw, 3rem);
+  /* preserve vertical rhythm (equal top/bottom) */
+  padding-top: clamp(4rem, 9vw, 8rem);
   padding-bottom: clamp(4rem, 9vw, 8rem);
 
+  /* Top rule is rendered via ::before for reliable full-bleed */
+  border-top: none;
   border-bottom: 1px solid var(--border);
   background-size: linear-gradient(
     rgba(250, 248, 244, 0.70),
@@ -105,6 +121,17 @@
 
   /* center hero text/content */
   text-align: center;
+}
+
+.page-home .hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  pointer-events: none;
 }
 
 /* Inner container keeps site max-width and centered content */
@@ -122,14 +149,6 @@
   .page-home .hero .container {
     padding-inline: 1.35rem;
   }
-}
-
-/* Remove left/right margin/padding for the hero container */
-.page-home .hero .container {
-  width: 100%;
-  max-width: none;
-  margin-inline: 0;
-  padding-inline: 0;
 }
 
 
