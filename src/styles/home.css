@@ -1,0 +1,473 @@
+/* =========================================================
+   HOME — pełny system typograficzny (publikacyjny)
+   Scoped do body.page-home, bez wpływu na post.css
+   ========================================================= */
+
+.page-home .home,
+.page-home .home * {
+  box-sizing: border-box;
+}
+
+/* Lokalny reset tylko dla strony głównej */
+.page-home .home * {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   CORE TYPO
+   ========================================================= */
+
+.page-home .home {
+  font-family: var(--serif);
+  font-size: var(--font-size-m);
+  line-height: 1.65;
+  letter-spacing: 0;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+
+  /* bez dzielenia — jak w post.css */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+
+  overflow-x: clip;
+}
+
+/* =========================================================
+   CONTAINER — szerszy hero (żeby nie było „słupka”)
+   ========================================================= */
+
+.page-home .container {
+  width: min(100%, 1100px);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* =========================================================
+   SEKCJE — rytm + cienka linia między sekcjami
+   (przyda się w kolejnych blokach na home)
+   ========================================================= */
+
+.page-home section {
+  padding-block: clamp(3rem, 6vw, 6rem);
+  position: relative;
+}
+
+/* krótka, publikacyjna kreska między kolejnymi sekcjami */
+.page-home section + section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 1px;
+  background: var(--border);
+  opacity: 0.6;
+}
+
+/* =========================================================
+   HERO
+   - Wyśrodkowany eyebrow
+   - Ornament między H1 a lead
+   - Delikatna linia na dole hero (jak pod menu)
+   ========================================================= */
+
+.page-home .hero {
+  position: relative;
+
+  /* full viewport width */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  box-sizing: border-box;
+
+  /* horizontal spacing removed so hero touches edges */
+  padding-inline: 0;
+
+  /* preserve vertical rhythm */
+  padding-top: clamp(2rem, 5vw, 3rem);
+  padding-bottom: clamp(4rem, 9vw, 8rem);
+
+  border-bottom: 1px solid var(--border);
+  background-size: linear-gradient(
+    rgba(250, 248, 244, 0.70),
+    rgba(250, 248, 244, 0.78)
+  ),
+  url("/images/hero-paper-texture-2.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* center hero text/content */
+  text-align: center;
+}
+
+/* Inner container keeps site max-width and centered content */
+.page-home .hero .container {
+  width: min(100%, 1100px);
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 1.5rem; /* match global body padding so content aligns */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* If global body padding differs on small screens, match that here */
+@media (max-width: 768px) {
+  .page-home .hero .container {
+    padding-inline: 1.35rem;
+  }
+}
+
+/* Remove left/right margin/padding for the hero container */
+.page-home .hero .container {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+
+/* =========================================================
+   EYEBROW (nad H1)
+   ========================================================= */
+
+.page-home .eyebrow {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  font-family: var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: var(--font-size-s);
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   HIERARCHIA NAGŁÓWKÓW (komplet: h1–h5)
+   ========================================================= */
+
+.page-home h1 {
+  font-size: clamp(2.15rem, 3.8vw, 3.45rem);
+  line-height: 1.06;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+
+  margin-top: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.page-home h2 {
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  line-height: 1.2;
+  font-weight: var(--font-weight-bold);
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.page-home h3 {
+  font-size: 1.3rem;
+  line-height: 1.25;
+  font-weight: var(--font-weight-bold);
+  font-variant: small-caps;
+  margin-top: 1.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.page-home h4 {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  font-weight: var(--font-weight-bold);
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.page-home h5 {
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: var(--font-weight-bold);
+  margin-top: 1rem;
+  margin-bottom: 0.55rem;
+}
+
+/* =========================================================
+   ORNAMENT ✦✦✦ (między h1 a lead)
+   ========================================================= */
+
+.page-home .ornament {
+  margin-top: 1.2rem;      /* więcej światła nad gwiazdkami */
+  margin-bottom: 1rem;     /* trochę mniej pod nimi */
+
+  text-align: center;
+  line-height: 1;
+
+  font-size: 0.9rem;
+  letter-spacing: 0.32em;
+  color: var(--text-tertiary);
+  opacity: 0.85;
+
+  font-family: var(--mono);
+  user-select: none;
+}
+
+/* =========================================================
+   TEKST / LEAD
+   ========================================================= */
+
+.page-home p {
+  line-height: 1.65;
+
+  /* bezpieczeństwo: długie słowa/URL nie rozjadą layoutu */
+  overflow-wrap: anywhere;
+}
+
+/* Lead ma być szerzej niż wcześniej */
+.page-home .lead {
+  margin-inline: auto;
+  max-width: 78ch;            /* SZEROKO */
+  font-size: 1.08em;
+  line-height: 1.7;
+
+  text-align: center;
+  text-justify: inter-word;
+
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+}
+
+/* strong / em */
+.page-home strong,
+.page-home b {
+  font-weight: var(--font-weight-bold);
+}
+
+.page-home em,
+.page-home i {
+  font-style: italic;
+}
+
+/* =========================================================
+   LINKI
+   ========================================================= */
+
+.page-home a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: var(--text-tertiary);
+  transition: text-decoration-color 0.2s ease-out;
+}
+
+.page-home a:hover {
+  text-decoration-color: var(--text-primary);
+}
+
+/* =========================================================
+   LISTY (przydadzą się w kolejnych sekcjach)
+   ========================================================= */
+
+.page-home ul,
+.page-home ol {
+  max-width: 78ch;
+  margin-inline: auto;
+  margin-top: 1.1rem;
+  padding-left: 1.25rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.page-home li {
+  margin-top: 0.35rem;
+}
+
+
+/* =========================================================
+   BUTTONY / CTA
+   ========================================================= */
+
+.page-home .hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.page-home .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  padding: 0.75rem 1.2rem;
+
+  font-family: var(--sans);
+  font-weight: 600;
+  text-decoration: none;
+
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.page-home .btn.primary {
+  background: var(--text-primary);
+  color: var(--bg);
+  border-color: var(--text-primary);
+}
+
+.page-home .btn.ghost {
+  background: transparent;
+}
+
+/* =========================================================
+   OFFER — publikacyjny / gazetowy
+   ========================================================= */
+
+.page-home .offer { text-align: left;}
+
+.page-home .offer-head{
+  text-align:center;
+  margin-bottom: clamp(1.2rem, 2.6vw, 1.8rem);
+  padding-bottom: clamp(0.9rem, 2vw, 1.2rem);
+  border-bottom:1px solid var(--border);
+}
+
+.page-home .offer-head .kicker{
+  font-family: var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: var(--font-size-s);
+  color: var(--text-secondary);
+  margin-bottom: .55rem;
+}
+
+.page-home .offer-head h2{ margin:0; }
+
+.page-home .offer-head .deck{
+  margin-top: .8rem;
+  margin-inline: auto;
+  max-width: 80ch;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 1.02em;
+}
+
+/* siatka jak kolumny */
+.page-home .offer-grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 2.4vw, 1.35rem);
+}
+
+/* karta */
+.page-home .offer-card{
+  grid-column: span 6;
+  display:grid;
+  gap: .9rem;
+
+  border:1px solid var(--border);
+  border-radius: 14px;
+
+  background: rgba(255,255,255,.28);
+  backdrop-filter: blur(6px);
+
+  padding: clamp(1rem, 2.2vw, 1.2rem);
+}
+
+.page-home .offer-media{
+  margin:0;
+  border:1px solid var(--border);
+  border-radius: 12px;
+  overflow:hidden;
+  background: rgba(255,255,255,.18);
+}
+
+.page-home .offer-media img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.page-home .offer-body h3{
+  margin:0;
+  font-size: 1.28rem;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+}
+
+.page-home .offer-body p{
+  margin-top: .55rem;
+  line-height: 1.72;
+  opacity: .9;
+}
+
+.page-home .offer-link{
+  display:inline-block;
+  margin-top: .75rem;
+  font-family: var(--sans);
+  font-size: .98rem;
+  text-decoration:none;
+  color: var(--text-primary);
+  border-bottom:1px solid var(--border);
+  padding-bottom:.15rem;
+}
+
+.page-home .offer-link:hover{
+  border-bottom-color: var(--text-primary);
+}
+
+.page-home .offer-actions{
+  margin-top: clamp(1.4rem, 3vw, 2rem);
+  display:flex;
+  justify-content:center;
+  gap:.8rem;
+  flex-wrap:wrap;
+}
+
+/* responsive */
+@media (max-width: 920px){
+  .page-home .offer-card{ grid-column: span 12; }
+}
+@media (max-width: 640px){
+  .page-home .offer-head{ text-align:left; }
+  .page-home .offer-head .deck{ margin-inline:0; }
+  .page-home .offer-media img{ aspect-ratio: 16 / 9; }
+}
+
+
+/* =========================================================
+   MOBILE (≤ 640px) — czytelność jak w post.css
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .page-home .container {
+    padding-inline: 1rem;
+  }
+
+  /* Na mobile: bez justowania */
+  .page-home .lead {
+    max-width: 100%;
+    text-align: center;
+    text-justify: auto;
+  }
+
+  .page-home ul,
+  .page-home ol {
+    max-width: 100%;
+  }
+
+  .page-home .ornament {
+    letter-spacing: 0.26em;
+    opacity: 0.8;
+  }
+}

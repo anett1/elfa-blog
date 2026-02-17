@@ -1,497 +1,146 @@
 ---
-import Header from '@/components/layout/Header.astro'
-import '@/styles/fonts.css'
-import 'glightbox/dist/css/glightbox.min.css'
-import { Masonry } from 'astro-masonry';
-import { Image } from 'astro:assets'
-
-import img1 from '@/assets/img-1.jpeg'
-import img2 from '@/assets/img-2.jpeg'
-import img3 from '@/assets/img-3.jpeg'
-import img4 from '@/assets/img-4.jpeg'
-import img5 from '@/assets/img-5.jpeg'
-import img6 from '@/assets/img-6.jpeg'
-import img7 from '@/assets/img-7.jpeg'
-import img8 from '@/assets/img-8.jpeg'
-import img9 from '@/assets/img-9.jpeg'
-import img10 from '@/assets/img-10.jpeg'
-import img11 from '@/assets/img-11.jpeg'
-import img12 from '@/assets/img-12.jpeg'
-import img13 from '@/assets/img-13.jpeg'
-import img14 from '@/assets/img-14.jpeg'
-import img15 from '@/assets/img-15.jpeg'
-import img16 from '@/assets/img-16.jpeg'
-import img17 from '@/assets/img-17.jpeg'
-import img18 from '@/assets/img-18.jpeg'
-import img19 from '@/assets/img-19.jpeg'
-import img20 from '@/assets/img-20.jpeg'
-import img21 from '@/assets/img-21.jpeg'
-import img22 from '@/assets/img-22.jpeg'
-import img23 from '@/assets/img-23.jpeg'
-import img24 from '@/assets/img-24.jpeg'
-import img25 from '@/assets/img-25.jpeg'
-import img26 from '@/assets/img-26.jpeg'
-import img27 from '@/assets/img-27.jpeg'
-import img28 from '@/assets/img-28.jpeg'
-import img29 from '@/assets/img-29.jpeg'
-import img30 from '@/assets/img-30.jpeg'
-import img31 from '@/assets/img-31.jpg'
-import img32 from '@/assets/img-32.jpg'
-import img33 from '@/assets/img-33.jpg'
+import Header from '@/components/layout/Header.astro';
+import '@/styles/global.css';
+import '@/styles/home.css';
 ---
 
 <!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elfa Publikacje — skład DTP, konwersje EPUB/PDF, przygotowanie do druku</title>
-  <meta name="description" content="Profesjonalny skład publikacji (DTP), konwersje e-booków (EPUB3/Kindle-ready/PDF), projektowanie i przygotowanie do druku. Oferta dla wydawnictw, autorów i firm." />
-  <meta property="og:title" content="Elfa Publikacje — skład DTP i e-booki" />
-  <meta property="og:description" content="Skład DTP • Konwersje EPUB3/Kindle • Przygotowanie do druku" />
-  <meta property="og:type" content="website" />
-  <meta name="color-scheme" content="light only" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text x='10' y='48' font-family='Georgia,serif' font-size='48'>¶</text></svg>">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script defer data-domain="elfapublikacje.com" src="https://plausible.io/js/script.js"></script>
+    <title>Elfa Publikacje — skład DTP, konwersje EPUB/PDF, przygotowanie do druku</title>
+    <meta
+      name="description"
+      content="Profesjonalny skład publikacji (DTP), konwersje e-booków (EPUB3/Kindle-ready/PDF), projektowanie i przygotowanie do druku. Oferta dla wydawnictw, autorów i firm."
+    />
 
-  <style is:global>
-    /* ========== TOKI, ZMIENNE, BAZA ========== */
-    :root{
-      --bg:#faf7f2;
-      --ink:#2a2a2a;
-      --ink-soft:#4b4b4b;
-      --accent:#b68b3c;
-      --accent-ink:#6a521f;
-      --rule:#e8e0d6;
-      --shadow:0 10px 30px rgba(0,0,0,.06);
-      --max:88ch;
-    }
-    * { box-sizing: border-box; }
-    body{
-      margin:0;
-      color:var(--ink);
-      background:var(--bg);
-      font-family:"Tiempos Text","Tiempos","Times New Roman",Times,Georgia,serif;
-      line-height:1.55;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-      hyphens:none;
-    }
-    .wrap{max-width:var(--max); margin-inline:auto; padding:clamp(16px,5vw,28px)}
-    section{padding:clamp(28px,8vw,56px) 0; border-top:1px solid var(--rule)}
-    h1{font-size:clamp(1.8rem,6vw,3rem); line-height:1.1; margin:.35em 0 .4em}
-    h2{font-size:clamp(1.3rem,4vw,2rem); margin:0 0 .4em}
-    h3{font-size:1.1rem; margin:1.4rem 0 .5rem; font-variant: small-caps;}
-    p{margin:.75rem 0}
-    .kicker{color:var(--accent-ink); letter-spacing:.08em; text-transform:uppercase; font-size:.8rem}
-    .lead{font-size:clamp(1rem,2.8vw,1.25rem); color:var(--ink-soft); max-width:60ch}
-    .cta{margin-top:1.2rem; display:flex; gap:.8rem; flex-wrap:wrap}
-    .btn{border:1px solid var(--accent); background:linear-gradient(180deg,#d7b976,#b68b3c); color:#fff; padding:.6rem .9rem; border-radius:999px; text-decoration:none; box-shadow:var(--shadow); font-size:.95rem}
-    .btn--ghost{border-color:var(--rule); background:#fff; color:var(--ink);}
-    .btn:hover{filter:saturate(110%)}
+    <meta property="og:title" content="Elfa Publikacje — skład DTP i e-booki" />
+    <meta
+      property="og:description"
+      content="Skład DTP • Konwersje EPUB3/Kindle • Przygotowanie do druku"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="color-scheme" content="light only" />
 
-    /* ========== SIATKI OGÓLNE ========== */
-    .grid{display:grid; gap:clamp(16px,4vw,24px)}
-    .grid.cols-2{grid-template-columns:1fr}
-    .grid.cols-3{grid-template-columns:1fr}
-    @media(min-width:720px){.grid.cols-2{grid-template-columns:1fr 1fr}}
-    @media(min-width:960px){.grid.cols-3{grid-template-columns:1fr 1fr 1fr}}
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text x='10' y='48' font-family='Georgia,serif' font-size='48'>¶</text></svg>"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script defer data-domain="elfapublikacje.com" src="https://plausible.io/js/script.js"></script>
+  </head>
 
-    /* ========== HERO ========== */
-    .hero{padding:clamp(36px,8vw,88px) 0}
+  <body class="page-home">
+    <Header />
 
-    /* ========== SOCIAL ========== */
-    .social{display:flex; gap:.6rem; margin-top:.4rem}
-    .social a{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border:1px solid var(--rule); border-radius:999px; background:#fff; box-shadow:var(--shadow); text-decoration:none; color:var(--ink-soft)}
-    .social a:hover{transform:translateY(-1px); color:var(--ink)}
-    .social svg{width:18px; height:18px}
-    .social svg *{stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
-    .social svg .fill{fill:currentColor; stroke:none}
+    <main class="home">
+      <section class="hero">
+        <div class="container">
+          <p class="eyebrow">Elfa Publikacje</p>
 
-    /* ========== FOOTER ========== */
-    footer{border-top:1px solid var(--rule); background:var(--bg)}
-    .footgrid{display:grid; gap:24px}
-    @media(min-width:820px){.footgrid{grid-template-columns:1fr 1fr}}
+          <h1>Skład DTP i przygotowanie do druku, konwersje ebooków EPUB/PDF</h1>
 
-    /* ========== DRUK ========== */
-    @media print{
-      header.site, .cta .btn{display:none}
-      body{background:#fff}
-      section{break-inside:avoid}
-    }
+          <div class="ornament" aria-hidden="true">✦✦✦</div>
 
-    /* ========== MASONRY ========== */
-    .astro-masonry-grid { display:flex; gap:0; width:100%; column-gap:0; }
-    .astro-masonry-grid_column { display:flex; flex-direction:column; gap:0; margin-left:6px; margin-right:6px; }
-    .astro-masonry-grid_column:first-child { margin-left:0; }
-    .astro-masonry-grid_column:last-child { margin-right:0; }
-    .masonry-item { border-radius:8px; overflow:hidden; box-shadow:var(--shadow); transition:transform .2s ease; padding:0; background:#fff; margin-bottom:12px; }
-    .masonry-item:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.12); }
-    .masonry-item img { display:block; width:100%; height:auto; }
+          <p class="lead">
+            Profesjonalny skład publikacji, książek, ebooków, gazet, katalogów dla wydawnictw, autorów i firm — logiczna struktura i komfort czytania na ekranie i papierze.
+          </p>
 
-    /* =========================================================
-       OFERTA – ikona po lewej, heading po prawej, tekst poniżej
-       ========================================================= */
-    #oferta { border-top:1px solid var(--rule); padding:clamp(40px,6vw,80px) 0; }
-    .oferta-grid { display:grid; gap:3rem 2rem; }
-    @media (min-width:900px){ .oferta-grid{ grid-template-columns:1fr 1fr; } }
-
-    .oferta-card { border-top:1px solid var(--rule); padding-top:1.25rem; text-align:left; }
-
-    /* Pasek nagłówkowy (ikona + tytuł) */
-    .oferta-head{
-      display:flex;
-      align-items:center;         /* wyśrodkowanie w pionie ikony i tytułu */
-      gap:.9rem;
-      min-height:48px;
-    }
-    .oferta-icon{
-      width:clamp(36px,4.5vw,56px); /* mniejsza ikona */
-      height:auto;
-      flex:0 0 auto;               /* nie rozciąga się */
-      display:block;
-      color:var(--accent-ink);
-      opacity:.95;
-    }
-    #oferta .oferta-card h3{
-      margin:0;                    /* zero marginesów w pasku nagłówkowym */
-      background:none;
-      color:var(--accent-ink);
-      font-weight:500;
-      font-size:clamp(1.05rem, 2.2vw, 1.35rem);
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      font-variant:normal;
-      line-height:1.2;
-    }
-
-    /* Treści poniżej paska nagłówkowego – zaczynają od lewej krawędzi */
-    .oferta-body{
-      margin-top:.75rem;           /* separacja od paska */
-    }
-    #oferta .oferta-card p{
-      margin:.5rem 0 .65rem;
-      line-height:1.55;
-      text-align:left;             /* wyraźne wyrównanie do lewej */
-      hyphens:none;                /* bez dzielenia wyrazów w tym wariancie */
-    }
-    #oferta .oferta-card ul{
-      margin:.4rem 0 .2rem 0;
-      padding-left:1.1rem;         /* minimalna przestrzeń na punktor */
-      list-style:disc;
-    }
-    #oferta .oferta-card li{ break-inside:avoid; }
-
-    /* Mobile drobne dopieszczenie */
-    @media (max-width:540px){
-      .oferta-head{ gap:.7rem; }
-      .oferta-icon{ width:40px; }
-      #oferta .oferta-card h3{ font-size:1.02rem; }
-    }
-
-    /* ========== KONTAKT ========== */
-    #kontakt ul { list-style:none; padding-left:0; margin:.5rem 0 1rem; }
-    #kontakt ul li { margin-bottom:.4rem; position:relative; padding-left:1.2em; }
-    #kontakt ul li::before { content:"•"; position:absolute; left:0; color:var(--accent-ink); font-weight:bold; }
-    #kontakt a { color:var(--accent-ink); text-decoration:none; }
-    #kontakt a:hover { text-decoration:underline; }
-  </style>
-</head>
-
-<body>
-  <Header />
-
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap grid">
-        <div>
-          <div class="kicker">Skład DTP • E-booki • Okładki</div>
-          <h1>Projekty publikacji <span style="font-weight: normal;"> — logiczna struktura i komfort czytania na ekranie i papierze.</span></h1>
-          <p style="text-align: center;">✦ ✦ ✦</p>
-          <p class="lead">Projekty oraz skład książek, gazet, katalogów, konwersje ebooków do formatów EPUB i PDF, projekty okładek, przygotowanie plików do druku.<strong> Oferta dla wydawnictw, firm i autorów.</strong></p>
-          <div class="cta">
-            <a class="btn" href="#portfolio">Wybrane projekty</a>
-            <a class="btn btn--ghost" href="#kontakt">Kontakt i wycena</a>
+          <div class="hero-actions">
+            <a class="btn primary" href="/oferta/">Zobacz ofertę</a>
+            <a class="btn ghost" href="/kontakt/">Napisz do mnie</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      
 
-    <!-- OFERTA -->
-    <section id="oferta" class="oferta">
-      <div class="wrap">
-        <h2>Czym się zajmujemy</h2>
+<section class="offer" id="oferta" aria-labelledby="oferta-title">
+  <div class="container">
+    <header class="offer-head">
+      <p class="kicker">Oferta</p>
+      <h2 id="oferta-title">Usługi wydawnicze i projekty publikacji</h2>
+      <p class="deck">
+        Skład książek i przygotowanie do druku, konwersje EPUB/PDF, projekt e-booków sprzedażowych,
+        materiały firmowe oraz okładki — w jednym, spójnym warsztacie.
+      </p>
+    </header>
 
-        <div class="oferta-grid">
-          <!-- 1. Projektowanie i skład -->
-          <article class="oferta-card">
-            <div class="oferta-head">
-              <img src="/images/oferta-projekt.svg" alt="Projektowanie i skład publikacji" class="oferta-icon">
-              <h3>Projektowanie i skład publikacji</h3>
-            </div>
-            <div class="oferta-body">
-              <p>Pełny proces opracowania graficznego i typograficznego – od koncepcji wizualnej po finalny układ stron. Każdy projekt powstaje z myślą o czytelności i harmonii wizualnej.</p>
-              <ul>
-                <li>Makiety, koncepcje wizualne, moodboardy</li>
-                <li>Dobór krojów pisma i stylu graficznego</li>
-                <li>Projektowanie układów stron i działów</li>
-                <li>Skład książek, magazynów, katalogów</li>
-                <li>Wersje drukowane i elektroniczne (PDF, EPUB)</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 2. Przygotowanie do druku -->
-          <article class="oferta-card">
-            <div class="oferta-head">
-              <img src="/images/oferta-druk.svg" alt="Przygotowanie do druku" class="oferta-icon">
-              <h3>Przygotowanie do druku</h3>
-            </div>
-            <div class="oferta-body">
-              <p>Kompleksowy prepress – kontrola profili kolorystycznych, spadów, czcionek i rozdzielczości. Pliki dostarczane w standardzie PDF/X.</p>
-              <ul>
-                <li>PDF/X-1a lub PDF/X-4, spady i marginesy bezpieczeństwa</li>
-                <li>Profile CMYK (FOGRA), kontrola TAC i nadlewek</li>
-                <li>Preflight, osadzenie czcionek i obrazów</li>
-                <li>Proofing i doradztwo poligraficzne</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 3. Konwersja e-booków -->
-          <article class="oferta-card">
-            <div class="oferta-head">
-              <img src="/images/oferta-ebook.svg" alt="Konwersja e-booków" class="oferta-icon">
-              <h3>Konwersja e-booków</h3>
-            </div>
-            <div class="oferta-body">
-              <p>Konwersja publikacji do formatów EPUB3, MOBI i PDF na bazie czystego kodu XHTML i CSS, zgodnie ze standardami W3C, IDPF i WCAG.</p>
-              <ul>
-                <li>Konwersja z DOCX, InDesign, PDF, Markdown</li>
-                <li>Struktura XHTML + CSS, metadane i spis treści</li>
-                <li>EPUB3 i Kindle-ready (Send to Kindle, KDP)</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 4. Projekty okładek -->
-          <article class="oferta-card">
-            <div class="oferta-head">
-              <img src="/images/oferta-okladki.svg" alt="Projekty okładek" class="oferta-icon">
-              <h3>Projekty okładek</h3>
-            </div>
-            <div class="oferta-body">
-              <p>Okładki opracowane z uwzględnieniem charakteru książki i grupy odbiorców. Typografia, kolor i forma tworzą spójną kompozycję wizualną.</p>
-              <ul>
-                <li>Projekty koncepcyjne, typograficzne i fotograficzne</li>
-                <li>Dopasowanie do formatu książki i grubości grzbietu</li>
-                <li>Wersje do druku (CMYK) i cyfrowe (RGB)</li>
-              </ul>
-            </div>
-          </article>
+    <div class="offer-grid">
+      <article class="offer-card">
+        <figure class="offer-media">
+          <img src="/images/offer-dtp.png" width="960" height="720" loading="lazy" decoding="async"
+            alt="Skład książek i przygotowanie do druku — publikacyjny układ stron." />
+        </figure>
+        <div class="offer-body">
+          <h3>Studio DTP — skład książek i przygotowanie do druku</h3>
+          <p>Skład i łamanie książek oraz publikacji drukowanych: paginy, spisy treści, rytm strony, kontrola typografii i pliki gotowe dla drukarni.</p>
+          <a class="offer-link" href="/oferta/#dtp">Szczegóły</a>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-      <div class="wrap">
-        <h2>Wybrane realizacje</h2>
-      </div>
-
-      <Masonry
-        breakpointCols={{
-          default: 6,
-          700: 4,
-          500: 2
-        }}
-      >
-      <a href={img33.src} class="masonry-item glightbox"><Image src={img33} alt="Projekt publikacji 33" /></a>  
-      <a href={img32.src} class="masonry-item glightbox"><Image src={img32} alt="Projekt publikacji 32" /></a>  
-      <a href={img31.src} class="masonry-item glightbox"><Image src={img31} alt="Projekt publikacji 31" /></a>  
-      <a href={img30.src} class="masonry-item glightbox"><Image src={img30} alt="Projekt publikacji 30" /></a>
-        <a href={img29.src} class="masonry-item glightbox"><Image src={img29} alt="Projekt publikacji 29" /></a>
-        <a href={img28.src} class="masonry-item glightbox"><Image src={img28} alt="Projekt publikacji 28" /></a>
-        <a href={img27.src} class="masonry-item glightbox"><Image src={img27} alt="Projekt publikacji 27" /></a>
-        <a href={img26.src} class="masonry-item glightbox"><Image src={img26} alt="Projekt publikacji 26" /></a>
-        <a href={img25.src} class="masonry-item glightbox"><Image src={img25} alt="Projekt publikacji 25" /></a>
-        <a href={img24.src} class="masonry-item glightbox"><Image src={img24} alt="Projekt publikacji 24" /></a>
-        <a href={img23.src} class="masonry-item glightbox"><Image src={img23} alt="Projekt publikacji 23" /></a>
-        <a href={img22.src} class="masonry-item glightbox"><Image src={img22} alt="Projekt publikacji 22" /></a>
-        <a href={img21.src} class="masonry-item glightbox"><Image src={img21} alt="Projekt publikacji 21" /></a>
-        <a href={img20.src} class="masonry-item glightbox"><Image src={img20} alt="Projekt publikacji 20" /></a>
-        <a href={img19.src} class="masonry-item glightbox"><Image src={img19} alt="Projekt publikacji 19" /></a>
-        <a href={img18.src} class="masonry-item glightbox"><Image src={img18} alt="Projekt publikacji 18" /></a>
-        <a href={img17.src} class="masonry-item glightbox"><Image src={img17} alt="Projekt publikacji 17" /></a>
-        <a href={img16.src} class="masonry-item glightbox"><Image src={img16} alt="Projekt publikacji 16" /></a>
-        <a href={img15.src} class="masonry-item glightbox"><Image src={img15} alt="Projekt publikacji 15" /></a>
-        <a href={img14.src} class="masonry-item glightbox"><Image src={img14} alt="Projekt publikacji 14" /></a>
-        <a href={img13.src} class="masonry-item glightbox"><Image src={img13} alt="Projekt publikacji 13" /></a>
-        <a href={img12.src} class="masonry-item glightbox"><Image src={img12} alt="Projekt publikacji 12" /></a>
-        <a href={img11.src} class="masonry-item glightbox"><Image src={img11} alt="Projekt publikacji 11" /></a>
-        <a href={img10.src} class="masonry-item glightbox"><Image src={img10} alt="Projekt publikacji 10" /></a>
-        <a href={img9.src} class="masonry-item glightbox"><Image src={img9} alt="Projekt publikacji 9" /></a>
-        <a href={img8.src} class="masonry-item glightbox"><Image src={img8} alt="Projekt publikacji 8" /></a>
-        <a href={img7.src} class="masonry-item glightbox"><Image src={img7} alt="Projekt publikacji 7" /></a>
-        <a href={img6.src} class="masonry-item glightbox"><Image src={img6} alt="Projekt publikacji 6" /></a>
-        <a href={img5.src} class="masonry-item glightbox"><Image src={img5} alt="Projekt publikacji 5" /></a>
-        <a href={img4.src} class="masonry-item glightbox"><Image src={img4} alt="Projekt publikacji 4" /></a>
-        <a href={img3.src} class="masonry-item glightbox"><Image src={img3} alt="Projekt publikacji 3" /></a>
-        <a href={img2.src} class="masonry-item glightbox"><Image src={img2} alt="Projekt publikacji 2" /></a>
-        <a href={img1.src} class="masonry-item glightbox"><Image src={img1} alt="Projekt publikacji 1" /></a>
-      </Masonry>
-
-      <div class="wrap" style="text-align: center;">
-        <a class="btn" href="https://www.instagram.com/elfapublikacje/" target="_blank" rel="noopener">
-          Więcej realizacji zobacz na <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-      </div>
-    </section>
-
-    <!-- PROCES -->
-    <section id="proces">
-      <div class="wrap">
-        <h2>Jak pracujemy — prosty proces</h2>
-
-        <div class="grid cols-1">
-          <div class="card">
-            <h3>1. Materiały i brief</h3>
-            <p>Otrzymujemy od Państwa:</p>
-            <ul>
-              <li>tekst (DOCX, Markdown lub inny edytowalny format),</li>
-              <li>ilustracje, fotografie i logotypy,</li>
-              <li>wytyczne dotyczące formatu, stylu i kolorystyki.</li>
-            </ul>
-            <p>Na tym etapie omawiamy oczekiwania dotyczące układu, typografii, wersji cyfrowej i drukowanej, a także sposobu dystrybucji. Wspólnie ustalamy harmonogram, zakres prac i budżet.</p>
-          </div>
-
-          <div class="card">
-            <h3>2. Projekt i skład</h3>
-            <p>Tworzymy koncepcję wizualną publikacji – układ siatki, styl nagłówków, kroje pisma i kolorystykę. Na początku prezentujemy przykładowe rozkładówki, które pokazują kierunek projektu zarówno dla wersji drukowanej, jak i e-booka.</p>
-            <p>Po akceptacji przystępujemy do pełnego składu, opracowując układ stron i spójny styl typograficzny. Dla wersji elektronicznej przygotowujemy responsywny plik EPUB3 z elastycznym układem tekstu, dostosowanym do różnych urządzeń i rozdzielczości ekranu.</p>
-            <ul>
-              <li>projektujemy czytelny i uporządkowany układ stron,</li>
-              <li>dbamy o hierarchię typograficzną i rytm tekstu,</li>
-              <li>zachowujemy spójność wizualną między wersją drukowaną a cyfrową.</li>
-            </ul>
-            <p>Całość projektu opiera się na zasadach przejrzystości, czytelności i harmonii wizualnej.</p>
-          </div>
-
-          <div class="card">
-            <h3>3. Kontrola i finalne pliki</h3>
-            <p>Na zakończenie wykonujemy pełną kontrolę techniczną i jakościową:</p>
-            <ul>
-              <li>sprawdzamy poprawność układu stron, marginesy, spady i kolory w CMYK,</li>
-              <li>testujemy e-book na różnych czytnikach i aplikacjach, aby zapewnić zgodność ze standardem EPUB3,</li>
-              <li>weryfikujemy kompletność metadanych, linków i spisu treści.</li>
-            </ul>
-            <p>Gotowe materiały przekazujemy w formatach:</p>
-            <ul>
-              <li><strong>PDF/X</strong> – przygotowany do druku lub dystrybucji online,</li>
-              <li><strong>EPUB3</strong> – w pełni responsywny, zgodny z wytycznymi W3C i głównymi platformami dystrybucyjnymi.</li>
-            </ul>
-            <p>Każda publikacja przechodzi testy zgodności i jest gotowa do druku oraz publikacji cyfrowej.</p>
-          </div>
+      <article class="offer-card">
+        <figure class="offer-media">
+          <img src="/images/offer-epub-pdf.png" width="960" height="720" loading="lazy" decoding="async"
+            alt="Konwersje e-booków — EPUB i PDF przygotowane do sprzedaży online." />
+        </figure>
+        <div class="offer-body">
+          <h3>Konwersje e-booków — EPUB i PDF do sprzedaży online</h3>
+          <p>Konwersja książek do EPUB3 (również Kindle-ready) i przygotowanie sprzedażowego PDF: struktura, style, nawigacja i walidacja.</p>
+          <a class="offer-link" href="/oferta/#konwersje">Szczegóły</a>
         </div>
+      </article>
 
-        <p class="orn" style="text-align: center;">✦ ✦ ✦</p>
-
-        <div class="aside-note">
-          Publikacje przygotowujemy w profesjonalnym środowisku projektowym z pełną kontrolą nad typografią, kolorem i układem.
-          E-booki powstają na czystym kodzie XHTML i CSS, dzięki czemu są lekkie, zgodne ze standardami i działają poprawnie na wszystkich czytnikach.
+      <article class="offer-card">
+        <figure class="offer-media">
+          <img src="/images/offer-ebook-design.png" width="960" height="720" loading="lazy" decoding="async"
+            alt="Projekt e-booka — czytelna szata graficzna i układ sprzedażowy." />
+        </figure>
+        <div class="offer-body">
+          <h3>Projekt e-booka — szata graficzna publikacji sprzedażowych</h3>
+          <p>E-booki sprzedażowe, leadowe i eksperckie: layout rozdziałów, wyróżnienia, ramki, cytaty, tabele oraz nawigacja — pod czytanie na ekranie.</p>
+          <a class="offer-link" href="/oferta/#ebooki">Szczegóły</a>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- CENNIK -->
-    <section id="cennik">
-      <div class="wrap">
-        <h2>Cennik orientacyjny</h2>
-        <div class="grid cols-3">
-          <div class="card">
-            <h3>Skład tekstu (DTP)</h3>
-            <div class="price">od 100 zł / arkusz</div>
-            <p class="meta">1 arkusz wydawniczy = 40 000 znaków ze spacjami (ok. 22 strony). Cena zależy od stopnia skomplikowania układu i liczby ilustracji.</p>
-          </div>
-          <div class="card">
-            <h3>E-book (EPUB3 / Kindle-ready)</h3>
-            <div class="price">od 400 zł</div>
-            <p class="meta">Kompleksowe przygotowanie e-booka: konwersja z pliku tekstowego, styl CSS, spis treści, testy i walidacja. Opcjonalnie także wersja MOBI dla starszych czytników.</p>
-          </div>
-          <div class="card">
-            <h3>Projekt okładki</h3>
-            <div class="price">od 350 zł</div>
-            <p class="meta">Projekt okładki do druku (ze spadami i grzbietem) oraz/lub wersja do e-booka. Pliki dostosowane do wymogów drukarni i platform sprzedażowych.</p>
-          </div>
+      <article class="offer-card">
+        <figure class="offer-media">
+          <img src="/images/offer-catalog-ppt.png" width="960" height="720" loading="lazy" decoding="async"
+            alt="Katalogi i materiały firmowe — projekty do druku i online, w tym prezentacje PowerPoint." />
+        </figure>
+        <div class="offer-body">
+          <h3>Katalogi i materiały firmowe — druk i online (także PowerPoint)</h3>
+          <p>Katalogi produktowe, oferty, broszury, raporty oraz prezentacje PowerPoint zgodne z brandingiem — przygotowane do druku i publikacji online.</p>
+          <a class="offer-link" href="/oferta/#firmowe">Szczegóły</a>
         </div>
+      </article>
 
-        <p class="orn" style="text-align: center;">✦ ✦ ✦</p>
-        <p class="meta">Ostateczna wycena zależy od objętości tekstu, liczby ilustracji, terminu realizacji i wymagań technicznych. Szczegółową ofertę przygotowujemy po zapoznaniu się z materiałami.</p>
-      </div>
-    </section>
-  </main>
-
-  <!-- KONTAKT -->
-  <footer id="kontakt">
-    <div class="wrap footgrid">
-      <div>
-        <h2>Kontakt</h2>
-        <p>
-          Osoby zainteresowane skorzystaniem z usług firmy serdecznie zapraszamy do kontaktu.
-          Z przyjemnością odpowiemy na wszelkie pytania!
-        </p>
-        <p><strong>Aby się z nami skontaktować, możesz:</strong></p>
-        <ul>
-          <li>napisać maila na adres <a href="mailto:aneta.jagla@elfapublikacje.com">aneta.jagla@elfapublikacje.com</a></li>
-          <li>wejść na nasze profile w mediach społecznościowych:</li>
-        </ul>
-
-        <div class="social" aria-label="Linki społecznościowe">
-          <a href="https://www.facebook.com/profile.php?id=100089374577169" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v9h4v-9h3.5l.5-4H15V6a1 1 0 0 1 1-1h3V2z"/>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/elfapublikacje/" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="5"/>
-              <circle class="fill" cx="18" cy="6" r="1.5"/>
-            </svg>
-          </a>
+      <article class="offer-card">
+        <figure class="offer-media">
+          <img src="/images/offer-covers.png" width="960" height="720" loading="lazy" decoding="async"
+            alt="Projekty okładek książek — wariant do druku i e-booka." />
+        </figure>
+        <div class="offer-body">
+          <h3>Projekty okładek — druk i e-book</h3>
+          <p>Okładki książek i e-booków: typografia, kompozycja, przygotowanie do druku oraz wersje pod platformy. Czytelność również w miniaturach.</p>
+          <a class="offer-link" href="/oferta/#okladki">Szczegóły</a>
         </div>
-
-        <ul>
-          <li>zadzwonić pod numer <a href="tel:513090196">513 090 196</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Dlaczego warto?</h3>
-        <p>
-          Stawiamy na przejrzystość i zgodność ze standardami.
-          Tworzymy pliki, które działają poprawnie i wyglądają dobrze na każdym urządzeniu — dziś i w przyszłości.
-        </p>
-      </div>
+      </article>
     </div>
 
-    <div class="wrap" style="text-align:center; color:var(--ink-soft); padding-top:0">
-      © <span id="y"></span> Elfa Publikacje
+    <div class="offer-actions">
+      <a class="btn primary" href="/oferta/">Pełna oferta</a>
+      <a class="btn ghost" href="/kontakt/">Zapytaj o wycenę</a>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- ROK W STOPCE -->
-  <script is:inline>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
 
-  <!-- GLightbox (modułowo) -->
-  <script is:inline type="module">
-    import GLightbox from 'glightbox';
-    GLightbox({ touchNavigation: true, loop: true, autoplayVideos: false });
-  </script>
-</body>
+
+    </main>
+  </body>
 </html>

@@ -1,5 +1,6 @@
 @import './fonts.css';
 @import './post.css';
+/*@import './home.css';*/
 
 :root {
   /* Min Content Width */
@@ -25,7 +26,7 @@
   --spacing-m: 0;
 
   /* Light Mode Colors (Default) */
-  --bg: #fffdf9; /*pierwotnie byl bialy*/
+  --bg: #fbfbf9; /*pierwotnie byl bialy*/
   --text-primary: rgba(0, 0, 0, 0.85);
   --text-secondary: rgba(0, 0, 0, 0.4);
   --text-tertiary: rgba(0, 0, 0, 0.24);
@@ -125,14 +126,14 @@ body {
   letter-spacing: var(--spacing-m);
   font-kerning: normal;           /* korzystaj z par kerningowych fontu */
   font-variant-ligatures: common-ligatures;
-  padding: 6rem 1.5rem 1.5rem 1.5rem;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
   overscroll-behavior-y: contain;
   transition: background-color 0.2s ease-out;
 }
 
 @media (max-width: 768px) {
   body {
-    padding: 4rem 1.35rem 1.35rem 1.35rem;
+    padding: 1.35rem 1.35rem 1.35rem 1.35rem; 
   }
 }
 
