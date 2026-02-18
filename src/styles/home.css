@@ -110,8 +110,8 @@ body.page-home header.site {
   border-top: none;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(
-    rgba(250, 248, 244, 0.70),
-    rgba(250, 248, 244, 0.78)
+    rgba(250, 248, 244, 0.50),
+    rgba(250, 248, 244, 0.62)
   ),
   url("/images/hero-paper-texture-2.png");
 
