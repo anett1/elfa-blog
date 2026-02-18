@@ -15,8 +15,7 @@
       </svg>
     </button>
     <nav id="nav-main" class="main-nav" aria-label="Główne">
-      <a href="/#portfolio">Realizacje</a>
-      <a href="/#cennik">Cennik</a>
+      <a href="/realizacje">Realizacje</a>
       <a href="/blog">Blog</a>
       <a href="/#kontakt">Kontakt</a>
     </nav>
@@ -39,6 +38,12 @@
     position:sticky; top:0; z-index:5; backdrop-filter:saturate(140%) blur(6px);
     background:var(--bg);
     border-bottom:1px solid var(--rule);
+
+    /* Break out of constrained parent (blog pages) to match homepage */
+    position: sticky;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    box-sizing: border-box;
   }
   .brand{display:flex; gap:.8rem; align-items:center;}
   .brand__name{font-size:1.25rem; font-weight:600}

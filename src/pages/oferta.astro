@@ -1,0 +1,181 @@
+---
+import Header from '@/components/layout/Header.astro'
+import '@/styles/global.css'
+---
+
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oferta — Elfa Publikacje</title>
+  <meta name="description" content="Usługi wydawnicze: skład DTP, konwersje e-booków, projekty publikacji, materiały firmowe i okładki." />
+  <meta property="og:title" content="Oferta — Elfa Publikacje" />
+  <meta property="og:description" content="Usługi wydawnicze: skład DTP, konwersje e-booków, projekty publikacji." />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="light only" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text x='10' y='48' font-family='Georgia,serif' font-size='48'>¶</text></svg>">
+  <script defer data-domain="elfapublikacje.com" src="https://plausible.io/js/script.js"></script>
+</head>
+
+<body>
+  <Header />
+
+  <main class="oferta-page">
+    <section class="hero">
+      <div class="container">
+        <h1>Oferta</h1>
+        <p class="lead">
+          Profesjonalne usługi wydawnicze — od składu książek po konwersje e-booków i projekty okładek.
+        </p>
+      </div>
+    </section>
+
+    <section id="dtp" class="service">
+      <div class="container">
+        <h2>Studio DTP — skład książek i przygotowanie do druku</h2>
+        <p class="placeholder-note">Treść w przygotowaniu</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </section>
+
+    <section id="konwersje" class="service">
+      <div class="container">
+        <h2>Konwersje e-booków — EPUB i PDF</h2>
+        <p class="placeholder-note">Treść w przygotowaniu</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc, vitae aliquam nisl nunc sit amet nisl. Sed euismod, nisl eget ultricies aliquam.
+        </p>
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+        </p>
+      </div>
+    </section>
+
+    <section id="ebooki" class="service">
+      <div class="container">
+        <h2>Projekt e-booka — szata graficzna publikacji</h2>
+        <p class="placeholder-note">Treść w przygotowaniu</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus.
+        </p>
+        <p>
+          Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat.
+        </p>
+      </div>
+    </section>
+
+    <section id="firmowe" class="service">
+      <div class="container">
+        <h2>Katalogi i materiały firmowe</h2>
+        <p class="placeholder-note">Treść w przygotowaniu</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta.
+        </p>
+        <p>
+          Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+        </p>
+      </div>
+    </section>
+
+    <section id="okladki" class="service">
+      <div class="container">
+        <h2>Projekty okładek — druk i e-book</h2>
+        <p class="placeholder-note">Treść w przygotowaniu</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.
+        </p>
+        <p>
+          Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+        </p>
+      </div>
+    </section>
+
+    <section id="korekta" class="service">
+      <div class="container">
+        <h2>Korekta i redakcja tekstów</h2>
+        <p class="placeholder-note">Treść w przygotowaniu</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+        </p>
+        <p>
+          Sed porttitor lectus nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+<style>
+  .oferta-page {
+    --rule: #e8e0d6;
+  }
+
+  .container {
+    max-width: 70ch;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  .hero {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    text-align: center;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin: 0 0 0.5em;
+  }
+
+  .lead {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--text-secondary);
+    max-width: 55ch;
+    margin-inline: auto;
+  }
+
+  .service {
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .service:last-child {
+    border-bottom: none;
+  }
+
+  .service h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    line-height: 1.25;
+    margin: 0 0 1rem;
+  }
+
+  .service p {
+    line-height: 1.7;
+    margin: 1rem 0;
+  }
+
+  .placeholder-note {
+    display: inline-block;
+    background: var(--mark);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+</style>

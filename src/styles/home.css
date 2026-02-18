@@ -64,7 +64,7 @@ body.page-home header.site {
    ========================================================= */
 
 .page-home section {
-  padding-block: clamp(3rem, 6vw, 6rem);
+  padding-block: clamp(4rem, 8vw, 7rem);
   position: relative;
 }
 
@@ -109,7 +109,7 @@ body.page-home header.site {
   /* Top rule is rendered via ::before for reliable full-bleed */
   border-top: none;
   border-bottom: 1px solid var(--border);
-  background-size: linear-gradient(
+  background: linear-gradient(
     rgba(250, 248, 244, 0.70),
     rgba(250, 248, 244, 0.78)
   ),
@@ -278,7 +278,7 @@ body.page-home header.site {
    ========================================================= */
 
 .page-home a {
-  color: var(--primary);
+  color: var(--text-primary);
   text-decoration: underline;
   text-decoration-color: var(--text-tertiary);
   transition: text-decoration-color 0.2s ease-out;
@@ -350,12 +350,16 @@ body.page-home header.site {
    OFFER — publikacyjny / gazetowy
    ========================================================= */
 
-.page-home .offer { text-align: left;}
+.page-home .offer {
+  text-align: left;
+  margin-top: clamp(2rem, 5vw, 4rem);
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
 
 .page-home .offer-head{
   text-align:center;
-  margin-bottom: clamp(1.2rem, 2.6vw, 1.8rem);
-  padding-bottom: clamp(0.9rem, 2vw, 1.2rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
   border-bottom:1px solid var(--border);
 }
 
@@ -479,7 +483,7 @@ body.page-home header.site {
   box-sizing: border-box;
 
   padding-inline: 0;
-  padding-block: clamp(2.4rem, 5vw, 3.6rem);
+  padding-block: clamp(4rem, 8vw, 6rem);
 
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -579,12 +583,13 @@ body.page-home header.site {
 
 .page-home .contact {
   text-align: left;
+  margin-top: clamp(2rem, 5vw, 4rem);
 }
 
 .page-home .contact-head {
   text-align: center;
-  margin-bottom: clamp(1.2rem, 2.6vw, 1.8rem);
-  padding-bottom: clamp(0.9rem, 2vw, 1.2rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
   border-bottom: 1px solid var(--border);
 }
 
