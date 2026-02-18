@@ -463,6 +463,204 @@ body.page-home header.site {
   .page-home .offer-media img{ aspect-ratio: 16 / 9; }
 }
 
+/* =========================================================
+   PORTFOLIO TEASER — full-bleed, niski, z tłem (mozaika)
+   ========================================================= */
+
+.page-home .portfolio-teaser {
+  position: relative;
+
+  /* full viewport width (jak hero) */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  box-sizing: border-box;
+
+  padding-inline: 0;
+  padding-block: clamp(2.4rem, 5vw, 3.6rem);
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  background-image:
+    linear-gradient(
+      rgba(20, 18, 16, 0.70),
+      rgba(20, 18, 16, 0.70)
+    ),
+    url("/images/portfolio-grid-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.page-home .portfolio-teaser .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* delikatna „publikacyjna” szybka pod tekstem */
+.page-home .portfolio-teaser .container::before {
+  content: "";
+  position: absolute;
+  inset: -0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+.page-home .portfolio-teaser .kicker {
+  font-family: var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: var(--font-size-s);
+  margin-bottom: .55rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.page-home .portfolio-teaser h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.2vw, 2.15rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+.page-home .portfolio-teaser .deck {
+  margin-top: .75rem;
+  margin-inline: auto;
+  max-width: 78ch;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.page-home .portfolio-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: .8rem;
+  flex-wrap: wrap;
+}
+
+/* przyciski na ciemnym tle */
+.page-home .portfolio-teaser .btn {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.page-home .portfolio-teaser .btn.primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(20, 18, 16, 0.92);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* mobile: lekko mniej „szkła”, tekst w lewo jak w offer-head */
+@media (max-width: 640px) {
+  .page-home .portfolio-teaser .container {
+    text-align: left;
+  }
+  .page-home .portfolio-teaser .container::before {
+    inset: -0.6rem;
+    backdrop-filter: blur(4px);
+  }
+  .page-home .portfolio-actions {
+    justify-content: flex-start;
+  }
+}
+
+/* =========================================================
+   CONTACT — publikacyjna, przejrzysta sekcja
+   ========================================================= */
+
+.page-home .contact {
+  text-align: left;
+}
+
+.page-home .contact-head {
+  text-align: center;
+  margin-bottom: clamp(1.2rem, 2.6vw, 1.8rem);
+  padding-bottom: clamp(0.9rem, 2vw, 1.2rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-home .contact-head .kicker {
+  font-family: var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: var(--font-size-s);
+  color: var(--text-secondary);
+  margin-bottom: .55rem;
+}
+
+.page-home .contact-body {
+  max-width: 80ch;
+  margin-inline: auto;
+}
+
+.page-home .contact-body .lead {
+  font-size: 1.08em;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.page-home .contact-list {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
+
+.page-home .contact-list li {
+  margin-top: .6rem;
+}
+
+.page-home .contact-list a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: .1rem;
+}
+
+.page-home .contact-list a:hover {
+  border-bottom-color: var(--text-primary);
+}
+
+.page-home .contact-list .social a {
+  margin-left: .6rem;
+  font-size: 1.2rem;
+}
+
+.page-home .contact-note {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.page-home .contact-note h3 {
+  margin: 0;
+}
+
+.page-home .contact-note p {
+  margin-top: .6rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .page-home .contact-head {
+    text-align: left;
+  }
+
+  .page-home .contact-body .lead {
+    text-align: left;
+  }
+}
+
 
 /* =========================================================
    MOBILE (≤ 640px) — czytelność jak w post.css
