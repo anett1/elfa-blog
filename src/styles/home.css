@@ -639,6 +639,10 @@ body.page-home header.site {
   font-size: 1.2rem;
 }
 
+.page-home .contact-list .social i {
+  font-style: normal;
+}
+
 .page-home .contact-note {
   margin-top: 2rem;
   padding-top: 1.4rem;

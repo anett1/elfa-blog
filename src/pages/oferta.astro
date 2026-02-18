@@ -1,5 +1,6 @@
 ---
 import Header from '@/components/layout/Header.astro'
+import Footer from '@/components/layout/Footer.astro'
 import '@/styles/global.css'
 ---
 
@@ -93,6 +94,7 @@ import '@/styles/global.css'
   końcowego pliku zgodnego z wymaganiami drukarni.
 </p>
 
+        <a href="/#kontakt" class="cta-btn">Współpracuj z nami</a>
       </div>
     </section>
 
@@ -160,6 +162,7 @@ import '@/styles/global.css'
   oraz wprowadzenie ewentualnych korekt przed przekazaniem pliku finalnego.
 </p>
 
+        <a href="/#kontakt" class="cta-btn">Współpracuj z nami</a>
       </div>
     </section>
 
@@ -228,6 +231,8 @@ import '@/styles/global.css'
   wizualnej zgodnej z identyfikacją marki, projekt i skład całości e-booka,
   wprowadzenie korekt oraz przygotowanie finalnej wersji PDF gotowej do dystrybucji.
 </p>
+
+        <a href="/#kontakt" class="cta-btn">Współpracuj z nami</a>
       </div>
     </section>
 
@@ -297,6 +302,7 @@ import '@/styles/global.css'
   do druku i dystrybucji online.
 </p>
 
+        <a href="/#kontakt" class="cta-btn">Współpracuj z nami</a>
       </div>
     </section>
 
@@ -327,6 +333,7 @@ import '@/styles/global.css'
   sprzedawców oraz optymalizację pod kątem publikacji online.
 </p>
 
+        <a href="/#kontakt" class="cta-btn">Współpracuj z nami</a>
       </div>
     </section>
 
@@ -354,9 +361,11 @@ import '@/styles/global.css'
   oraz e-booków sprzedażowych.
 </p>
 
+        <a href="/#kontakt" class="cta-btn">Współpracuj z nami</a>
       </div>
     </section>
   </main>
+  <Footer />
 </body>
 </html>
 
@@ -418,6 +427,26 @@ import '@/styles/global.css'
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
     margin-bottom: 1rem;
+  }
+
+  .oferta-page .cta-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.6rem 1.6rem;
+    background: #b68b3c;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 0.875rem;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .oferta-page .cta-btn:hover {
+    background: #9a7432;
+    transform: translateY(-1px);
   }
 
   /* Smooth scroll for anchor links */
