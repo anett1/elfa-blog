@@ -103,8 +103,8 @@ body.page-home header.site {
   padding-inline: 0;
 
   /* preserve vertical rhythm (equal top/bottom) */
-  padding-top: clamp(4rem, 9vw, 8rem);
-  padding-bottom: clamp(4rem, 9vw, 8rem);
+  padding-top: clamp(2.6rem, 5.85vw, 5.2rem);
+  padding-bottom: clamp(2.6rem, 5.85vw, 5.2rem);
 
   /* Top rule is rendered via ::before for reliable full-bleed */
   border-top: none;
@@ -403,6 +403,14 @@ body.page-home header.site {
   backdrop-filter: blur(6px);
 
   padding: clamp(1rem, 2.2vw, 1.2rem);
+
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-home .offer-card:hover {
+  border-color: rgba(0,0,0,0.25);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 
 .page-home .offer-media{
@@ -411,13 +419,13 @@ body.page-home header.site {
   border-radius: 12px;
   overflow:hidden;
   background: rgba(255,255,255,.18);
+  aspect-ratio: 16 / 10;
 }
 
 .page-home .offer-media img{
   display:block;
   width:100%;
-  height:auto;
-  aspect-ratio: 16 / 10;
+  height:100%;
   object-fit: cover;
 }
 
@@ -445,6 +453,13 @@ body.page-home header.site {
   padding-bottom:.15rem;
 }
 
+.page-home .offer-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+}
+
 .page-home .offer-link:hover{
   border-bottom-color: var(--text-primary);
 }
@@ -462,9 +477,9 @@ body.page-home header.site {
   .page-home .offer-card{ grid-column: span 12; }
 }
 @media (max-width: 640px){
-  .page-home .offer-head{ text-align:left; }
-  .page-home .offer-head .deck{ margin-inline:0; }
-  .page-home .offer-media img{ aspect-ratio: 16 / 9; }
+  .page-home .offer-head{ text-align:center; }
+  .page-home .offer-head .deck{ margin-inline:auto; }
+  .page-home .offer-media{ aspect-ratio: 16 / 9; }
 }
 
 /* =========================================================
@@ -563,17 +578,17 @@ body.page-home header.site {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-/* mobile: lekko mniej „szkła”, tekst w lewo jak w offer-head */
+/* mobile: lekko mniej „szkła”, tekst wyśrodkowany */
 @media (max-width: 640px) {
   .page-home .portfolio-teaser .container {
-    text-align: left;
+    text-align: center;
   }
   .page-home .portfolio-teaser .container::before {
     inset: -0.6rem;
     backdrop-filter: blur(4px);
   }
   .page-home .portfolio-actions {
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 
@@ -662,11 +677,11 @@ body.page-home header.site {
 /* Mobile */
 @media (max-width: 640px) {
   .page-home .contact-head {
-    text-align: left;
+    text-align: center;
   }
 
   .page-home .contact-body .lead {
-    text-align: left;
+    text-align: center;
   }
 }
 

@@ -175,19 +175,19 @@ import img37 from '@/assets/img-37.jpg'
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid var(--accent);
-    background: linear-gradient(180deg, #d7b976, #b68b3c);
-    color: #fff;
+    border: 1px solid var(--text-primary, #2a2a2a);
+    background: var(--text-primary, #2a2a2a);
+    color: var(--bg, #fff);
     padding: 0.6rem 1.2rem;
     border-radius: 999px;
     text-decoration: none;
-    box-shadow: var(--shadow);
     font-size: 0.95rem;
-    transition: filter 0.2s ease;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
   }
 
   .btn:hover {
-    filter: saturate(110%);
+    opacity: 0.8;
   }
 </style>
 
