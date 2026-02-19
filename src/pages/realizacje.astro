@@ -1,0 +1,256 @@
+---
+import Header from '@/components/layout/Header.astro'
+import Footer from '@/components/layout/Footer.astro'
+import '@/styles/global.css'
+import 'glightbox/dist/css/glightbox.min.css'
+import { Masonry } from 'astro-masonry'
+import { Image } from 'astro:assets'
+
+import img1 from '@/assets/img-1.jpeg'
+import img2 from '@/assets/img-2.jpeg'
+import img3 from '@/assets/img-3.jpeg'
+import img4 from '@/assets/img-4.jpeg'
+import img5 from '@/assets/img-5.jpeg'
+import img6 from '@/assets/img-6.jpeg'
+import img7 from '@/assets/img-7.jpeg'
+import img8 from '@/assets/img-8.jpeg'
+import img9 from '@/assets/img-9.jpeg'
+import img10 from '@/assets/img-10.jpeg'
+import img11 from '@/assets/img-11.jpeg'
+import img12 from '@/assets/img-12.jpeg'
+import img13 from '@/assets/img-13.jpeg'
+import img14 from '@/assets/img-14.jpeg'
+import img15 from '@/assets/img-15.jpeg'
+import img16 from '@/assets/img-16.jpeg'
+import img17 from '@/assets/img-17.jpeg'
+import img18 from '@/assets/img-18.jpeg'
+import img19 from '@/assets/img-19.jpeg'
+import img20 from '@/assets/img-20.jpeg'
+import img21 from '@/assets/img-21.jpeg'
+import img22 from '@/assets/img-22.jpeg'
+import img23 from '@/assets/img-23.jpeg'
+import img24 from '@/assets/img-24.jpeg'
+import img25 from '@/assets/img-25.jpeg'
+import img26 from '@/assets/img-26.jpeg'
+import img27 from '@/assets/img-27.jpeg'
+import img28 from '@/assets/img-28.jpeg'
+import img29 from '@/assets/img-29.jpeg'
+import img30 from '@/assets/img-30.jpeg'
+import img31 from '@/assets/img-31.jpg'
+import img32 from '@/assets/img-32.jpg'
+import img33 from '@/assets/img-33.jpg'
+import img34 from '@/assets/img-34.jpg'
+import img35 from '@/assets/img-35.jpg'
+import img36 from '@/assets/img-36.jpg'
+import img37 from '@/assets/img-37.jpg'
+---
+
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Realizacje — Elfa Publikacje</title>
+  <meta name="description" content="Wybrane realizacje: skład książek, e-booków, katalogów i materiałów firmowych. Zobacz przykłady naszej pracy." />
+  <meta property="og:title" content="Realizacje — Elfa Publikacje" />
+  <meta property="og:description" content="Wybrane realizacje: skład książek, e-booków, katalogów i materiałów firmowych." />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="light only" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text x='10' y='48' font-family='Georgia,serif' font-size='48'>¶</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer data-domain="elfapublikacje.com" src="https://plausible.io/js/script.js"></script>
+</head>
+
+<body>
+  <Header />
+
+  <main class="realizacje">
+    <section class="hero">
+      <div class="wrap">
+        <h1>Wybrane realizacje</h1>
+        <p class="lead">
+          Przykłady składu, typografii i pracy z materiałem wydawniczym — od druku po publikacje cyfrowe.
+        </p>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <Masonry
+        breakpointCols={{
+          default: 4,
+          1200: 4,
+          900: 3,
+          700: 2,
+          500: 2
+        }}
+      >
+        <a href={img37.src} class="masonry-item glightbox"><Image src={img37} alt="Projekt publikacji 37" /></a>
+        <a href={img36.src} class="masonry-item glightbox"><Image src={img36} alt="Projekt publikacji 36" /></a>
+        <a href={img35.src} class="masonry-item glightbox"><Image src={img35} alt="Projekt publikacji 35" /></a>
+        <a href={img33.src} class="masonry-item glightbox"><Image src={img33} alt="Projekt publikacji 33" /></a>
+        <a href={img32.src} class="masonry-item glightbox"><Image src={img32} alt="Projekt publikacji 32" /></a>
+        <a href={img31.src} class="masonry-item glightbox"><Image src={img31} alt="Projekt publikacji 31" /></a>
+        <a href={img30.src} class="masonry-item glightbox"><Image src={img30} alt="Projekt publikacji 30" /></a>
+        <a href={img29.src} class="masonry-item glightbox"><Image src={img29} alt="Projekt publikacji 29" /></a>
+        <a href={img28.src} class="masonry-item glightbox"><Image src={img28} alt="Projekt publikacji 28" /></a>
+        <a href={img3.src} class="masonry-item glightbox"><Image src={img3} alt="Projekt publikacji 3" /></a>
+        <a href={img27.src} class="masonry-item glightbox"><Image src={img27} alt="Projekt publikacji 27" /></a>
+        <a href={img26.src} class="masonry-item glightbox"><Image src={img26} alt="Projekt publikacji 26" /></a>
+        <a href={img25.src} class="masonry-item glightbox"><Image src={img25} alt="Projekt publikacji 25" /></a>
+        <a href={img24.src} class="masonry-item glightbox"><Image src={img24} alt="Projekt publikacji 24" /></a>
+        <a href={img23.src} class="masonry-item glightbox"><Image src={img23} alt="Projekt publikacji 23" /></a>
+        <a href={img22.src} class="masonry-item glightbox"><Image src={img22} alt="Projekt publikacji 22" /></a>
+        <a href={img34.src} class="masonry-item glightbox"><Image src={img34} alt="Projekt publikacji 34" /></a>
+        <a href={img21.src} class="masonry-item glightbox"><Image src={img21} alt="Projekt publikacji 21" /></a>
+        <a href={img20.src} class="masonry-item glightbox"><Image src={img20} alt="Projekt publikacji 20" /></a>
+        <a href={img5.src} class="masonry-item glightbox"><Image src={img5} alt="Projekt publikacji 5" /></a>
+        <a href={img4.src} class="masonry-item glightbox"><Image src={img4} alt="Projekt publikacji 4" /></a>
+        <a href={img19.src} class="masonry-item glightbox"><Image src={img19} alt="Projekt publikacji 19" /></a>
+        <a href={img18.src} class="masonry-item glightbox"><Image src={img18} alt="Projekt publikacji 18" /></a>
+        <a href={img17.src} class="masonry-item glightbox"><Image src={img17} alt="Projekt publikacji 17" /></a>
+        <a href={img16.src} class="masonry-item glightbox"><Image src={img16} alt="Projekt publikacji 16" /></a>
+        <a href={img15.src} class="masonry-item glightbox"><Image src={img15} alt="Projekt publikacji 15" /></a>
+        <a href={img14.src} class="masonry-item glightbox"><Image src={img14} alt="Projekt publikacji 14" /></a>
+        <a href={img13.src} class="masonry-item glightbox"><Image src={img13} alt="Projekt publikacji 13" /></a>
+        <a href={img12.src} class="masonry-item glightbox"><Image src={img12} alt="Projekt publikacji 12" /></a>
+        <a href={img11.src} class="masonry-item glightbox"><Image src={img11} alt="Projekt publikacji 11" /></a>
+        <a href={img10.src} class="masonry-item glightbox"><Image src={img10} alt="Projekt publikacji 10" /></a>
+        <a href={img9.src} class="masonry-item glightbox"><Image src={img9} alt="Projekt publikacji 9" /></a>
+        <a href={img8.src} class="masonry-item glightbox"><Image src={img8} alt="Projekt publikacji 8" /></a>
+        <a href={img7.src} class="masonry-item glightbox"><Image src={img7} alt="Projekt publikacji 7" /></a>
+        <a href={img6.src} class="masonry-item glightbox"><Image src={img6} alt="Projekt publikacji 6" /></a>
+        <a href={img2.src} class="masonry-item glightbox"><Image src={img2} alt="Projekt publikacji 2" /></a>
+        <a href={img1.src} class="masonry-item glightbox"><Image src={img1} alt="Projekt publikacji 1" /></a>
+      </Masonry>
+
+      <div class="wrap" style="text-align: center; margin-top: 2rem;">
+        <a class="btn" href="https://www.instagram.com/elfapublikacje/" target="_blank" rel="noopener">
+          Więcej realizacji zobacz na <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</body>
+</html>
+
+<style>
+  .realizacje {
+    --shadow: 0 10px 30px rgba(0,0,0,.06);
+    --rule: #e8e0d6;
+    --accent: #b68b3c;
+  }
+
+  .wrap {
+    max-width: 88ch;
+    margin-inline: auto;
+    padding: clamp(16px, 5vw, 28px);
+  }
+
+  .hero {
+    padding: clamp(2rem, 6vw, 4rem) 0;
+    text-align: center;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    line-height: 1.15;
+    margin: 0 0 0.5em;
+  }
+
+  .lead {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--text-secondary);
+    max-width: 60ch;
+    margin-inline: auto;
+  }
+
+  .gallery {
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--text-primary, #2a2a2a);
+    background: var(--text-primary, #2a2a2a);
+    color: var(--bg, #fff);
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+  }
+
+  .btn:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<style is:global>
+  /* Masonry Grid */
+  .astro-masonry-grid {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    column-gap: 0;
+  }
+
+  .astro-masonry-grid_column {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  .astro-masonry-grid_column:first-child {
+    margin-left: 0;
+  }
+
+  .astro-masonry-grid_column:last-child {
+    margin-right: 0;
+  }
+
+  .masonry-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 0;
+    background: #fff;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .masonry-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,.12);
+  }
+
+  .masonry-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+<script>
+  import GLightbox from 'glightbox';
+
+  function initLightbox() {
+    GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+    });
+  }
+
+  // Initialize on page load and after Astro view transitions
+  document.addEventListener('DOMContentLoaded', initLightbox);
+  document.addEventListener('astro:page-load', initLightbox);
+</script>

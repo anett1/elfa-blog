@@ -15,8 +15,8 @@
       </svg>
     </button>
     <nav id="nav-main" class="main-nav" aria-label="Główne">
-      <a href="/#portfolio">Realizacje</a>
-      <a href="/#cennik">Cennik</a>
+      <a href="/oferta">Oferta</a>
+      <a href="/realizacje">Realizacje</a>
       <a href="/blog">Blog</a>
       <a href="/#kontakt">Kontakt</a>
     </nav>
@@ -39,6 +39,12 @@
     position:sticky; top:0; z-index:5; backdrop-filter:saturate(140%) blur(6px);
     background:var(--bg);
     border-bottom:1px solid var(--rule);
+
+    /* Break out of constrained parent (blog pages) to match homepage */
+    position: sticky;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    box-sizing: border-box;
   }
   .brand{display:flex; gap:.8rem; align-items:center;}
   .brand__name{font-size:1.25rem; font-weight:600}
@@ -102,26 +108,68 @@
 
 <script is:inline>
   // Menu mobilne
-  document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('nav-main');
-    if(!btn || !nav) return;
-    btn.addEventListener('click', function(){
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open));
+  // NOTE: With Astro view transitions, `DOMContentLoaded` won't fire on client-side
+  // navigations. Use `astro:page-load` to (re)bind after each swap.
+
+  function getHeaderNavElements() {
+    const header = document.querySelector('header.site');
+    const btn = header?.querySelector('.nav-toggle');
+    const nav = header?.querySelector('#nav-main');
+    return { header, btn, nav };
+  }
+
+  function closeMobileNav() {
+    const { btn, nav } = getHeaderNavElements();
+    if (!btn || !nav) return;
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  function setupMobileNav() {
+    const { btn, nav } = getHeaderNavElements();
+    if (!btn || !nav) return;
+
+    // Bind click handler once per button instance
+    if (btn.dataset.navBound === 'true') return;
+    btn.dataset.navBound = 'true';
+
+    btn.addEventListener('click', () => {
+      const { btn: currentBtn, nav: currentNav } = getHeaderNavElements();
+      if (!currentBtn || !currentNav) return;
+      const open = currentNav.classList.toggle('open');
+      currentBtn.setAttribute('aria-expanded', String(open));
     });
-    document.addEventListener('click', function(e){
+
+    // Ensure correct ARIA state after swaps
+    btn.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false');
+
+    // Global close handlers (bind once)
+    if (window.__elfaMobileNavGlobalBound) return;
+    window.__elfaMobileNavGlobalBound = true;
+
+    document.addEventListener('click', (e) => {
+      const { btn, nav } = getHeaderNavElements();
+      if (!btn || !nav) return;
       const target = e.target;
-      if(nav.classList.contains('open') && target instanceof Node && !nav.contains(target) && !btn.contains(target)){
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded','false');
+      if (
+        nav.classList.contains('open') &&
+        target instanceof Node &&
+        !nav.contains(target) &&
+        !btn.contains(target)
+      ) {
+        closeMobileNav();
       }
     });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape'){
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded','false');
-      }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileNav();
     });
-  });
+
+    document.addEventListener('astro:before-swap', () => {
+      closeMobileNav();
+    });
+  }
+
+  document.addEventListener('astro:page-load', setupMobileNav);
+  document.addEventListener('DOMContentLoaded', setupMobileNav);
 </script>

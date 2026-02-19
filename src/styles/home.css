@@ -1,0 +1,714 @@
+/* =========================================================
+   HOME — pełny system typograficzny (publikacyjny)
+   Scoped do body.page-home, bez wpływu na post.css
+   ========================================================= */
+
+.page-home .home,
+.page-home .home * {
+  box-sizing: border-box;
+}
+
+/* Lokalny reset tylko dla strony głównej */
+.page-home .home * {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   CORE TYPO
+   ========================================================= */
+
+.page-home .home {
+  font-family: var(--serif);
+  font-size: var(--font-size-m);
+  line-height: 1.65;
+  letter-spacing: 0;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+
+  /* bez dzielenia — jak w post.css */
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+
+  /* Allow full-bleed sections (e.g. .hero) to break out to 100vw */
+  overflow-x: visible;
+}
+
+/* Prevent horizontal scrollbars on the home page while still allowing
+   full-bleed sections to render outside inner containers. */
+body.page-home {
+  overflow-x: clip;
+}
+
+/* The site header lives inside the centered/max-width body.
+   On the home page the hero is full-bleed, so move the separator line
+   onto the hero to keep it full width. */
+body.page-home header.site {
+  border-bottom: none !important;
+}
+
+/* =========================================================
+   CONTAINER — szerszy hero (żeby nie było „słupka”)
+   ========================================================= */
+
+.page-home .container {
+  width: min(100%, 1100px);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* =========================================================
+   SEKCJE — rytm + cienka linia między sekcjami
+   (przyda się w kolejnych blokach na home)
+   ========================================================= */
+
+.page-home section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  position: relative;
+}
+
+/* krótka, publikacyjna kreska między kolejnymi sekcjami */
+.page-home section + section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 1px;
+  background: var(--border);
+  opacity: 0.6;
+}
+
+/* =========================================================
+   HERO
+   - Wyśrodkowany eyebrow
+   - Ornament między H1 a lead
+   - Delikatna linia na dole hero (jak pod menu)
+   ========================================================= */
+
+.page-home .hero {
+  position: relative;
+
+  /* full viewport width */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  box-sizing: border-box;
+
+  /* horizontal spacing removed so hero touches edges */
+  padding-inline: 0;
+
+  /* preserve vertical rhythm (equal top/bottom) */
+  padding-top: clamp(2.6rem, 5.85vw, 5.2rem);
+  padding-bottom: clamp(2.6rem, 5.85vw, 5.2rem);
+
+  /* Top rule is rendered via ::before for reliable full-bleed */
+  border-top: none;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(
+    rgba(250, 248, 244, 0.50),
+    rgba(250, 248, 244, 0.62)
+  ),
+  url("/images/hero-paper-texture-2.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* center hero text/content */
+  text-align: center;
+}
+
+.page-home .hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  pointer-events: none;
+}
+
+/* Inner container keeps site max-width and centered content */
+.page-home .hero .container {
+  width: min(100%, 1100px);
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 1.5rem; /* match global body padding so content aligns */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* If global body padding differs on small screens, match that here */
+@media (max-width: 768px) {
+  .page-home .hero .container {
+    padding-inline: 1.35rem;
+  }
+}
+
+
+/* =========================================================
+   EYEBROW (nad H1)
+   ========================================================= */
+
+.page-home .eyebrow {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  font-family: var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: var(--font-size-s);
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   HIERARCHIA NAGŁÓWKÓW (komplet: h1–h5)
+   ========================================================= */
+
+.page-home h1 {
+  font-size: clamp(2.15rem, 3.8vw, 3.45rem);
+  line-height: 1.06;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+
+  margin-top: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.page-home h2 {
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  line-height: 1.2;
+  font-weight: var(--font-weight-bold);
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.page-home h3 {
+  font-size: 1.3rem;
+  line-height: 1.25;
+  font-weight: var(--font-weight-bold);
+  font-variant: small-caps;
+  margin-top: 1.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.page-home h4 {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  font-weight: var(--font-weight-bold);
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.page-home h5 {
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: var(--font-weight-bold);
+  margin-top: 1rem;
+  margin-bottom: 0.55rem;
+}
+
+/* =========================================================
+   ORNAMENT ✦✦✦ (między h1 a lead)
+   ========================================================= */
+
+.page-home .ornament {
+  margin-top: 1.2rem;      /* więcej światła nad gwiazdkami */
+  margin-bottom: 1rem;     /* trochę mniej pod nimi */
+
+  text-align: center;
+  line-height: 1;
+
+  font-size: 0.9rem;
+  letter-spacing: 0.32em;
+  color: var(--text-tertiary);
+  opacity: 0.85;
+
+  font-family: var(--mono);
+  user-select: none;
+}
+
+/* =========================================================
+   TEKST / LEAD
+   ========================================================= */
+
+.page-home p {
+  line-height: 1.65;
+
+  /* bezpieczeństwo: długie słowa/URL nie rozjadą layoutu */
+  overflow-wrap: anywhere;
+}
+
+/* Lead ma być szerzej niż wcześniej */
+.page-home .lead {
+  margin-inline: auto;
+  max-width: 78ch;            /* SZEROKO */
+  font-size: 1.08em;
+  line-height: 1.7;
+
+  text-align: center;
+  text-justify: inter-word;
+
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+}
+
+/* strong / em */
+.page-home strong,
+.page-home b {
+  font-weight: var(--font-weight-bold);
+}
+
+.page-home em,
+.page-home i {
+  font-style: italic;
+}
+
+/* =========================================================
+   LINKI
+   ========================================================= */
+
+.page-home a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--text-tertiary);
+  transition: text-decoration-color 0.2s ease-out;
+}
+
+.page-home a:hover {
+  text-decoration-color: var(--text-primary);
+}
+
+/* =========================================================
+   LISTY (przydadzą się w kolejnych sekcjach)
+   ========================================================= */
+
+.page-home ul,
+.page-home ol {
+  max-width: 78ch;
+  margin-inline: auto;
+  margin-top: 1.1rem;
+  padding-left: 1.25rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.page-home li {
+  margin-top: 0.35rem;
+}
+
+
+/* =========================================================
+   BUTTONY / CTA
+   ========================================================= */
+
+.page-home .hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.page-home .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  padding: 0.75rem 1.2rem;
+
+  font-family: var(--sans);
+  font-weight: 600;
+  text-decoration: none;
+
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.page-home .btn.primary {
+  background: var(--text-primary);
+  color: var(--bg);
+  border-color: var(--text-primary);
+}
+
+.page-home .btn.ghost {
+  background: transparent;
+}
+
+/* =========================================================
+   OFFER — publikacyjny / gazetowy
+   ========================================================= */
+
+.page-home .offer {
+  text-align: left;
+  margin-top: clamp(2rem, 5vw, 4rem);
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.page-home .offer-head{
+  text-align:center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
+  border-bottom:1px solid var(--border);
+}
+
+.page-home .offer-head .kicker{
+  font-family: var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: var(--font-size-s);
+  color: var(--text-secondary);
+  margin-bottom: .55rem;
+}
+
+.page-home .offer-head h2{ margin:0; }
+
+.page-home .offer-head .deck{
+  margin-top: .8rem;
+  margin-inline: auto;
+  max-width: 80ch;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 1.02em;
+}
+
+/* siatka jak kolumny */
+.page-home .offer-grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 2.4vw, 1.35rem);
+}
+
+/* karta */
+.page-home .offer-card{
+  grid-column: span 6;
+  display:grid;
+  gap: .9rem;
+
+  border:1px solid var(--border);
+  border-radius: 14px;
+
+  background: rgba(255,255,255,.28);
+  backdrop-filter: blur(6px);
+
+  padding: clamp(1rem, 2.2vw, 1.2rem);
+
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-home .offer-card:hover {
+  border-color: rgba(0,0,0,0.25);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.page-home .offer-media{
+  margin:0;
+  border:1px solid var(--border);
+  border-radius: 12px;
+  overflow:hidden;
+  background: rgba(255,255,255,.18);
+  aspect-ratio: 16 / 10;
+}
+
+.page-home .offer-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.page-home .offer-body h3{
+  margin:0;
+  font-size: 1.28rem;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+}
+
+.page-home .offer-body p{
+  margin-top: .55rem;
+  line-height: 1.72;
+  opacity: .9;
+}
+
+.page-home .offer-link{
+  display:inline-block;
+  margin-top: .75rem;
+  font-family: var(--sans);
+  font-size: .98rem;
+  text-decoration:none;
+  color: var(--text-primary);
+  border-bottom:1px solid var(--border);
+  padding-bottom:.15rem;
+}
+
+.page-home .offer-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+}
+
+.page-home .offer-link:hover{
+  border-bottom-color: var(--text-primary);
+}
+
+.page-home .offer-actions{
+  margin-top: clamp(1.4rem, 3vw, 2rem);
+  display:flex;
+  justify-content:center;
+  gap:.8rem;
+  flex-wrap:wrap;
+}
+
+/* responsive */
+@media (max-width: 920px){
+  .page-home .offer-card{ grid-column: span 12; }
+}
+@media (max-width: 640px){
+  .page-home .offer-head{ text-align:center; }
+  .page-home .offer-head .deck{ margin-inline:auto; }
+  .page-home .offer-media{ aspect-ratio: 16 / 9; }
+}
+
+/* =========================================================
+   PORTFOLIO TEASER — full-bleed, niski, z tłem (mozaika)
+   ========================================================= */
+
+.page-home .portfolio-teaser {
+  position: relative;
+
+  /* full viewport width (jak hero) */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  box-sizing: border-box;
+
+  padding-inline: 0;
+  padding-block: clamp(4rem, 8vw, 6rem);
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  background-image:
+    linear-gradient(
+      rgba(20, 18, 16, 0.70),
+      rgba(20, 18, 16, 0.70)
+    ),
+    url("/images/portfolio-grid-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.page-home .portfolio-teaser .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* delikatna „publikacyjna” szybka pod tekstem */
+.page-home .portfolio-teaser .container::before {
+  content: "";
+  position: absolute;
+  inset: -0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+.page-home .portfolio-teaser .kicker {
+  font-family: var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: var(--font-size-s);
+  margin-bottom: .55rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.page-home .portfolio-teaser h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.2vw, 2.15rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+.page-home .portfolio-teaser .deck {
+  margin-top: .75rem;
+  margin-inline: auto;
+  max-width: 78ch;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.page-home .portfolio-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: .8rem;
+  flex-wrap: wrap;
+}
+
+/* przyciski na ciemnym tle */
+.page-home .portfolio-teaser .btn {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.page-home .portfolio-teaser .btn.primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(20, 18, 16, 0.92);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* mobile: lekko mniej „szkła”, tekst wyśrodkowany */
+@media (max-width: 640px) {
+  .page-home .portfolio-teaser .container {
+    text-align: center;
+  }
+  .page-home .portfolio-teaser .container::before {
+    inset: -0.6rem;
+    backdrop-filter: blur(4px);
+  }
+  .page-home .portfolio-actions {
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   CONTACT — publikacyjna, przejrzysta sekcja
+   ========================================================= */
+
+.page-home .contact {
+  text-align: left;
+  margin-top: clamp(2rem, 5vw, 4rem);
+}
+
+.page-home .contact-head {
+  text-align: center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-home .contact-head .kicker {
+  font-family: var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: var(--font-size-s);
+  color: var(--text-secondary);
+  margin-bottom: .55rem;
+}
+
+.page-home .contact-body {
+  max-width: 80ch;
+  margin-inline: auto;
+}
+
+.page-home .contact-body .lead {
+  font-size: 1.08em;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.page-home .contact-list {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
+
+.page-home .contact-list li {
+  margin-top: .6rem;
+}
+
+.page-home .contact-list a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: .1rem;
+}
+
+.page-home .contact-list a:hover {
+  border-bottom-color: var(--text-primary);
+}
+
+.page-home .contact-list .social a {
+  margin-left: .6rem;
+  font-size: 1.2rem;
+}
+
+.page-home .contact-list .social i {
+  font-style: normal;
+}
+
+.page-home .contact-note {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.page-home .contact-note h3 {
+  margin: 0;
+}
+
+.page-home .contact-note p {
+  margin-top: .6rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .page-home .contact-head {
+    text-align: center;
+  }
+
+  .page-home .contact-body .lead {
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   MOBILE (≤ 640px) — czytelność jak w post.css
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .page-home .container {
+    padding-inline: 1rem;
+  }
+
+  /* Na mobile: bez justowania */
+  .page-home .lead {
+    max-width: 100%;
+    text-align: center;
+    text-justify: auto;
+  }
+
+  .page-home ul,
+  .page-home ol {
+    max-width: 100%;
+  }
+
+  .page-home .ornament {
+    letter-spacing: 0.26em;
+    opacity: 0.8;
+  }
+}

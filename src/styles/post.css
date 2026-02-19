@@ -25,7 +25,7 @@
 
 /* Sekcja tytułu wpisu */
 .prose .title { margin-bottom: 1.5em; }
-.prose .title h1 { margin: 0 0 0.5rem 0; }
+.prose .title h1 { margin: 0.5em 0 0.5rem 0; }
 
 /* ===============================
    NAGŁÓWKI — hierarchia książkowa
@@ -117,13 +117,13 @@
 
 /* Linki */
 .prose a {
-  color: var(--primary);
+  color: var(--text-primary);
   text-decoration: underline;
   text-decoration-color: var(--text-tertiary);
   transition: text-decoration-color 0.2s ease-out;
 }
 .prose a:hover {
-  color: var(--primary);
+  color: var(--text-primary);
   text-decoration-color: var(--text-primary);
 }
 
