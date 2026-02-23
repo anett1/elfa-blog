@@ -5,100 +5,177 @@ pubDate: '2026-02-22'
 ---
 
 
-Dostępność to sposób przygotowania e-booka tak, aby mogły z niego korzystać również osoby z niepełnosprawnościami — w szczególności osoby niewidome, słabowidzące, z trudnościami poznawczymi oraz osoby korzystające z czytników ekranu.
+**Dostępność to sposób przygotowania e-booka tak, aby mogły z niego korzystać także osoby z niepełnosprawnościami — w szczególności osoby niewidome, słabowidzące, z trudnościami poznawczymi oraz osoby korzystające z czytników ekranu.**
 
-W przypadku formatu EPUB dostępność nie jest dodatkiem technicznym, lecz elementem poprawnej budowy pliku. Obejmuje strukturę HTML, metadane, semantykę oraz sposób, w jaki treść reaguje na potrzeby użytkownika.
+W przypadku formatu EPUB dostępność jest elementem poprawnej konstrukcji pliku. Obejmuje właściwą strukturę HTML, semantykę, metadane oraz sposób, w jaki treść zachowuje się na różnych urządzeniach i przy różnych ustawieniach użytkownika.
 
-Standardy dostępności są rozwijane przez W3C (World Wide Web Consortium), które odpowiada m.in. za wytyczne WCAG oraz specyfikację EPUB 3. W Europie istotnym momentem było przyjęcie European Accessibility Act (Europejskiego Aktu o Dostępności), który rozszerzył wymagania dostępności na wybrane produkty i usługi cyfrowe, w tym e-booki sprzedawane konsumentom. Pełne stosowanie tych regulacji obowiązuje od 2025 roku.
+Nad standardami dostępności pracuje międzynarodowa organizacja [World Wide Web Consortium (W3C)](https://www.w3.org/). To ona opracowuje wytyczne [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/), specyfikację [EPUB 3](https://www.w3.org/TR/epub-33/) oraz dokument [EPUB Accessibility 1.1](https://www.w3.org/TR/epub-a11y-11/), który precyzuje wymagania dostępności dla publikacji cyfrowych.
 
-Dostępność e-booków nie wynika więc wyłącznie z „mody technologicznej”, lecz z realnej potrzeby zapewnienia równego dostępu do treści oraz z regulacji prawnych obowiązujących na rynku europejskim.
+W Europie istotną zmianą było przyjęcie [European Accessibility Act](https://eur-lex.europa.eu/eli/dir/2019/882/oj) (Europejskiego Aktu o Dostępności). Akt ten wprowadził obowiązek spełniania określonych wymagań dostępności przez wybrane produkty i usługi cyfrowe — w tym e-booki sprzedawane konsumentom. Przepisy w pełnym zakresie obowiązują od 2025 roku.
+
+Dostępność e-booków to dziś standard odpowiedzialnego projektowania publikacji cyfrowych — zarówno z myślą o użytkownikach, jak i o obowiązujących przepisach.
 
 ---
 
 ## Poziomy dostępności: A, AA, AAA w kontekście e-booków
 
-Wytyczne WCAG określają trzy poziomy zgodności: A, AA i AAA.
+Wytyczne WCAG definiują trzy poziomy zgodności: A, AA oraz AAA.  
+Każdy kolejny poziom obejmuje wymagania poziomu niższego i rozszerza je o dodatkowe kryteria.
 
-**Poziom A** oznacza spełnienie podstawowych wymagań umożliwiających odbiór treści.  
-W kontekście EPUB obejmuje to m.in.:
+### Poziom A — fundament dostępności
 
-- poprawną strukturę dokumentu w HTML,
-- logiczne oznaczenie nagłówków, list i akapitów,
-- możliwość odczytu treści przez technologie wspomagające,
-- brak elementów uniemożliwiających korzystanie (np. migotania).
+Poziom A oznacza spełnienie podstawowych wymagań, które umożliwiają odbiór treści przez użytkowników korzystających z technologii wspomagających.
 
-**Poziom AA** to poziom najczęściej wymagany w praktyce.  
-Oznacza m.in.:
+W przypadku e-booka w formacie EPUB oznacza to przede wszystkim:
 
-- prawidłową hierarchię nagłówków (`<h1>–<h6>`),
-- logiczną kolejność czytania w kodzie,
+- poprawną, semantyczną strukturę dokumentu (HTML),
+- logicznie oznaczone nagłówki, akapity i listy,
+- możliwość odczytu treści przez czytniki ekranu,
+- brak elementów uniemożliwiających korzystanie z publikacji (np. migających treści).
+
+To absolutne minimum, bez którego publikacja cyfrowa nie powinna być udostępniana.
+
+### Poziom AA — standard rynkowy
+
+Poziom AA obejmuje wszystkie wymagania poziomu A oraz wprowadza dodatkowe kryteria poprawiające komfort korzystania z treści.
+
+W kontekście e-booków oznacza to m.in.:
+
+- zachowanie prawidłowej hierarchii nagłówków (`h1–h6`),
+- logiczną kolejność czytania wynikającą z kodu źródłowego,
 - teksty alternatywne dla grafik niosących informację,
 - odpowiedni kontrast treści,
-- możliwość zmiany rozmiaru tekstu bez utraty czytelności.
+- możliwość zmiany rozmiaru tekstu bez utraty czytelności i funkcjonalności.
 
-**Poziom AAA** to najwyższy poziom zgodności, obejmujący dodatkowe wymagania i ułatwienia. Rzadko jest wymagany w całości, ale bywa stosowany w publikacjach specjalistycznych lub edukacyjnych.
+To poziom najczęściej wymagany w praktyce i przyjmowany jako bezpieczny standard przy publikacjach komercyjnych.
 
-W praktyce profesjonalnie przygotowany e-book powinien spełniać przynajmniej wymagania poziomu A lub AA.
+### Poziom AAA — poziom rozszerzony
+
+Poziom AAA obejmuje wymagania poziomu A i AA oraz dodatkowe, bardziej restrykcyjne kryteria zwiększające dostępność.
+
+Może dotyczyć m.in.:
+
+- jeszcze wyższych wymagań kontrastu,
+- dodatkowych ułatwień językowych,
+- bardziej rozbudowanych alternatyw dla treści wizualnych,
+- szczegółowych mechanizmów wspierających osoby z trudnościami poznawczymi.
+
+W praktyce rzadko wymaga się spełnienia wszystkich kryteriów AAA w całości. Poziom ten bywa stosowany w publikacjach specjalistycznych, edukacyjnych lub instytucjonalnych.
+
+W przypadku e-booków sprzedawanych komercyjnie profesjonalnie przygotowana publikacja powinna spełniać przynajmniej wymagania poziomu A, a w praktyce — poziomu AA.
 
 ---
 
 ## Struktura HTML – fundament dostępnego EPUB
 
-Dostępność EPUB zaczyna się od poprawnej struktury dokumentu.
+Dostępność pliku EPUB zaczyna się od poprawnej struktury dokumentu.  
+To kod — a nie wygląd — decyduje o tym, czy publikacja jest czytelna dla technologii wspomagających.
 
-Nagłówki muszą być rzeczywistymi nagłówkami HTML:
+### 1. Semantyczne nagłówki
+
+Nagłówki muszą być rzeczywistymi nagłówkami HTML, a nie jedynie wizualnie powiększonym tekstem.
 
 ```html
 <h1>Rozdział 1</h1>
 <h2>Podrozdział</h2>
+<h3>Śródtytuł</h3>
 ```
 
-a nie jedynie powiększonym tekstem. To znaczniki `<h1>–<h6>` tworzą logiczną hierarchię dokumentu i umożliwiają prawidłową nawigację.
+To znaczniki `<h1>–<h6>` tworzą logiczną hierarchię dokumentu i umożliwiają prawidłową nawigację.
 
-Spis treści powinien być zdefiniowany w pliku `nav.xhtml`:
+Hierarchia powinna:
+
+- odzwierciedlać rzeczywistą strukturę treści,
+- zachowywać kolejność poziomów (nie rozpoczynamy od `<h3>` ani nie pomijamy poziomów),
+- umożliwiać przeskakiwanie między sekcjami w czytnikach ekranu.
+
+Nagłówek zapisany wyłącznie jako powiększony akapit (np. stylowany CSS) nie jest nagłówkiem w rozumieniu dostępności.
+
+
+### 2. Spis treści (`nav.xhtml`)
+
+Spis treści w EPUB 3 definiowany jest w pliku `nav.xhtml`.
 
 ```html
 <nav epub:type="toc">
 ```
 
-Spis treści musi odzwierciedlać rzeczywistą strukturę książki i prowadzić do właściwych fragmentów.
+Spis treści powinien:
 
-Każda grafika niosąca treść powinna mieć tekst alternatywny — czyli krótki opis tego, co znajduje się na obrazie:
+- odzwierciedlać faktyczną strukturę książki,
+- prowadzić do właściwych fragmentów dokumentu,
+- być spójny z hierarchią nagłówków w plikach XHTML.
+
+Niespójność między nagłówkami a `nav.xhtml` jest jednym z częstszych błędów w e-bookach.
+
+
+### 3. Teksty alternatywne dla grafik
+
+Każda grafika niosąca treść informacyjną powinna posiadać tekst alternatywny (`alt`).
 
 ```html
 <img src="mapa.jpg" alt="Mapa Polski z zaznaczonymi trasami podróży bohatera">
 ```
 
-Jeżeli grafika jest wyłącznie dekoracyjna, powinna być oznaczona w sposób, który nie zakłóca odczytu treści przez czytnik ekranu.
+Opis powinien:
 
-Deklaracja języka publikacji jest obowiązkowa:
+- przekazywać sens obrazu,
+- być zwięzły,
+- nie powtarzać zbędnych informacji.
+
+Jeżeli grafika ma wyłącznie charakter dekoracyjny, powinna być oznaczona w sposób, który nie zakłóca odczytu przez czytnik ekranu (np. pustym atrybutem `alt=""`).
+
+
+### 4. Deklaracja języka publikacji
+
+Każdy plik XHTML powinien zawierać deklarację języka. Brak deklaracji języka jest błędem technicznym i wpływa na dostępność publikacji:
 
 ```html
 <html lang="pl">
 ```
 
-Ma to bezpośredni wpływ na prawidłowe działanie syntezatorów mowy.
+Ma to bezpośredni wpływ na:
+
+- prawidłową wymowę w syntezatorach mowy,
+- poprawne przetwarzanie tekstu przez technologie wspomagające,
+- walidację pliku EPUB.
 
 ---
 
 ## Metadane bibliograficzne – element zgodności technicznej
 
-Plik EPUB musi zawierać komplet podstawowych metadanych w pliku `content.opf`, takich jak:
+Plik EPUB musi zawierać komplet podstawowych metadanych w pliku `content.opf`.
 
-- `dc:title` – tytuł,
+Do najważniejszych należą:
+
+- `dc:title` – tytuł publikacji,
 - `dc:creator` – autor,
 - `dc:language` – język,
 - `dc:date` – data wydania,
 - `dc:publisher` – wydawca,
 - `dc:description` – opis.
 
-Poprawne metadane są niezbędne przy walidacji pliku, dystrybucji oraz indeksowaniu publikacji w systemach sprzedażowych i bibliotekach cyfrowych.
+Metadane pełnią kilka istotnych funkcji:
+
+- umożliwiają prawidłową walidację pliku,
+- są wykorzystywane przez platformy sprzedażowe,
+- pozwalają na poprawne indeksowanie w bibliotekach cyfrowych,
+- zapewniają zgodność ze standardem EPUB.
+
+Braki lub błędy w metadanych mogą skutkować odrzuceniem publikacji przez platformy dystrybucyjne.
 
 ---
 
 ## Metadane dostępności – schema:accessibility
 
-Coraz większe znaczenie mają również metadane dostępności oparte na Schema.org.
+Coraz większe znaczenie w kontekście dostępności EPUB mają metadane oparte na standardzie [Schema.org](https://schema.org/).
+
+### Czym jest Schema.org?
+
+Schema.org to wspólny standard opisu danych opracowany przez największe organizacje technologiczne.  
+W kontekście e-booków umożliwia on ujednolicony sposób deklarowania informacji o dostępności publikacji.
+
+W EPUB 3 metadane dostępności zapisuje się w pliku `content.opf`, w sekcji `<metadata>`.
 
 Przykład:
 
@@ -110,26 +187,44 @@ Przykład:
 <meta property="schema:accessibilityHazard">none</meta>
 ```
 
-- `accessMode` określa sposób odbioru treści (np. tekstowo),
-- `accessibilityFeature` wskazuje funkcje dostępności obecne w publikacji,
-- `accessibilityHazard` informuje o braku elementów potencjalnie niebezpiecznych,
-- `accessibilitySummary` może zawierać opis poziomu dostępności.
+### Co oznaczają poszczególne elementy?
 
-Metadane te nie „tworzą” dostępności same w sobie, ale dokumentują jej poziom i bywają wymagane przez niektóre platformy sprzedażowe podczas procesu walidacji.
+- `schema:accessMode` – określa sposób odbioru treści (np. tekstowy, wizualny, dźwiękowy).
+- `schema:accessibilityFeature` – wskazuje funkcje dostępności obecne w publikacji (np. spis treści, logiczną kolejność czytania, teksty alternatywne).
+- `schema:accessibilityHazard` – informuje o potencjalnych zagrożeniach (np. migotaniu); wartość `none` oznacza ich brak.
+- `schema:accessibilitySummary` – opcjonalny opis poziomu dostępności i zastosowanych rozwiązań.
+
+### Dlaczego te metadane są istotne?
+
+Metadane Schema.org nie „tworzą” dostępności same w sobie.  
+Nie zastąpią poprawnej struktury HTML ani tekstów alternatywnych.
+
+Pełnią jednak ważną funkcję dokumentacyjną:
+
+- opisują poziom dostępności publikacji,
+- umożliwiają automatyczną walidację,
+- są wykorzystywane przez platformy sprzedażowe,
+- mogą być wymagane w procesie publikacji.
+
+W praktyce niektóre platformy dystrybucyjne, w kontekście regulacji dostępności (np. European Accessibility Act), wymagają obecności tych metadanych przed dopuszczeniem pliku do sprzedaży.
 
 ---
 
-## Czym są `epub:type` i ARIA role i czy są obowiązkowe w kontekście dostępności?
+## epub type i ARIA role – czym są i czy są obowiązkowe?
 
-W kontekście dostępności EPUB często pojawiają się dwa atrybuty: `epub:type` oraz ARIA role (w publikacjach rozwinięte jako DPUB-ARIA). Oba służą do doprecyzowania znaczenia elementów w strukturze książki cyfrowej, jednak nie pełnią tej samej funkcji.
+W kontekście dostępności EPUB często pojawiają się dwa pojęcia: `epub:type` oraz role ARIA (w publikacjach cyfrowych rozwinięte jako DPUB-ARIA).
 
-Najpierw najważniejsze: ani `epub:type`, ani ARIA role nie są globalnie obowiązkowe, aby plik był poprawnym EPUB 3, przeszedł walidację EpubCheck, spełniał poziom WCAG A lub AA czy został uznany za technicznie dostępny w rozumieniu specyfikacji. EPUB może zostać uznany za dostępny, jeśli ma poprawną strukturę HTML, logiczną hierarchię nagłówków, teksty alternatywne, deklarację języka, właściwe metadane oraz zachowaną kolejność czytania — nawet bez dodatkowych atrybutów semantycznych.
+Oba mechanizmy służą do doprecyzowania znaczenia elementów w strukturze książki cyfrowej, jednak nie pełnią tej samej funkcji i nie stanowią warunku minimalnej dostępności.
 
-To oznacza, że nie są one warunkiem minimalnym dostępności. Są natomiast warstwą rozszerzającą — wzmacniają semantykę publikacji i podnoszą jej poziom techniczny.
+Do przejścia walidacji EPUB 3 (EpubCheck) nie jest wymagane stosowanie ani `epub:type`, ani ról ARIA. Ich brak nie uniemożliwia również spełnienia poziomu WCAG A lub AA.
 
-### `epub:type` – doprecyzowanie struktury książki
+`epub:type` i role ARIA należy traktować jako warstwę rozszerzającą. Wzmacniają semantykę publikacji i podnoszą jej poziom techniczny, ale nie zastępują fundamentów dostępności.
 
-`epub:type` to atrybut specyficzny dla formatu EPUB. Służy do określenia funkcji danego fragmentu w strukturze publikacji — na przykład, że dana sekcja jest rozdziałem, wstępem, przypisami czy aneksem.
+
+### epub type – semantyka struktury książki
+
+`epub:type` to atrybut specyficzny dla formatu EPUB.  
+Służy do określenia funkcji danego fragmentu w strukturze publikacji — na przykład, że dana sekcja jest rozdziałem, wstępem, przypisami czy aneksem.
 
 Przykład:
 
@@ -137,13 +232,21 @@ Przykład:
 <section epub:type="chapter">
 ```
 
-Znaczniki takie jak `<h1>`, `<p>`, `<ol>` mają już wbudowaną semantykę w HTML i nie wymagają dodatkowego oznaczenia. `epub:type` jest szczególnie przydatny przy elementach ogólnych, takich jak `<section>` czy `<div>`, gdy chcemy wskazać ich rolę w kontekście całej książki.
+Wiele znaczników HTML, takich jak `<h1>`, `<p>` czy `<ol>`, posiada już własną, wbudowaną semantykę i nie wymaga dodatkowego oznaczania.  
+`epub:type` jest szczególnie przydatny przy elementach ogólnych, takich jak `<section>` czy `<div>`, gdy chcemy jednoznacznie wskazać ich rolę w kontekście całej książki.
 
-Atrybut ten nie zmienia wyglądu treści. Informuje system, czym dany fragment jest w strukturze publikacji. Może być wykorzystywany przez aplikacje czytające EPUB do lepszego rozumienia budowy dokumentu (np. rozdziałów, przypisów, bibliografii).
+Atrybut ten:
 
-### ARIA role – wsparcie dla technologii wspomagających
+- nie zmienia wyglądu treści,
+- nie wpływa bezpośrednio na sposób odczytu przez czytnik ekranu,
+- opisuje strukturę publikacji jako książki.
 
-ARIA (Accessible Rich Internet Applications), w wersji dla publikacji cyfrowych rozwinięta jako DPUB-ARIA, to zestaw ról umożliwiających technologiom wspomagającym — zwłaszcza czytnikom ekranu — dokładniejsze zrozumienie funkcji danego elementu.
+Może być wykorzystywany przez aplikacje czytające EPUB do lepszego rozumienia budowy dokumentu (np. identyfikowania rozdziałów, przypisów czy bibliografii).
+
+
+### ARIA role (DPUB-ARIA) – wsparcie dla technologii wspomagających
+
+ARIA (Accessible Rich Internet Applications), w wersji rozszerzonej dla publikacji cyfrowych jako DPUB-ARIA, to zestaw ról umożliwiających technologiom wspomagającym dokładniejsze zrozumienie funkcji danego elementu.
 
 Przykład:
 
@@ -151,13 +254,10 @@ Przykład:
 <section role="doc-chapter">
 ```
 
-Role ARIA są interpretowane bezpośrednio przez technologie asystujące. Informują czytnik ekranu, że dany fragment to rozdział, przypis, spis treści, dedykacja czy aneks. W przeciwieństwie do `epub:type`, który opisuje strukturę publikacji jako książki, ARIA role mają bezpośredni wpływ na sposób, w jaki treść jest odczytywana użytkownikowi.
+Role ARIA są interpretowane bezpośrednio przez technologie asystujące, zwłaszcza czytniki ekranu.  
+Informują system, że dany fragment pełni określoną funkcję — np. rozdziału, przypisu, spisu treści, dedykacji czy aneksu.
 
-W wielu przypadkach natywna semantyka HTML jest wystarczająca i nie wymaga dodatkowych ról. ARIA stosuje się wtedy, gdy chcemy doprecyzować znaczenie elementu, którego HTML sam w sobie nie opisuje jednoznacznie.
-
----
-
-Podsumowując: brak `epub:type` i ARIA role nie powoduje automatycznie, że EPUB jest niedostępny. Jednak ich świadome zastosowanie wzmacnia semantykę dokumentu, poprawia interpretację struktury przez systemy oraz zwiększa komfort korzystania z publikacji przez osoby używające technologii wspomagających. W projektach edukacyjnych, naukowych i instytucjonalnych są coraz częściej traktowane jako element dobrej praktyki.
+W przeciwieństwie do `epub:type`, który opisuje strukturę publikacji jako książki, role ARIA mają bezpośredni wpływ na sposób, w jaki treść jest interpretowana przez technologie wspomagające.
 
 ---
 
@@ -175,22 +275,11 @@ Przede wszystkim jednak chodzi o to, aby z e-booka mogły korzystać również o
 
 ## Podsumowanie
 
+Aby EPUB mógł zostać uznany za technicznie dostępny i przejść walidację, powinien posiadać poprawną strukturę HTML, logiczną hierarchię nagłówków, zachowaną kolejność czytania, działający dokument nawigacyjny (`nav.xhtml`), teksty alternatywne dla grafik, deklarację języka oraz komplet podstawowych metadanych w pliku `content.opf`. Konieczny jest również brak błędów strukturalnych wykrywanych przez narzędzia walidacyjne (np. EpubCheck) oraz zgodność z WCAG na poziomie A lub AA — w zależności od kontekstu projektu.
 
-Aby e-book EPUB mógł zostać uznany za technicznie dostępny i przejść walidację, konieczne jest przede wszystkim:
+Dodatkowa semantyka w postaci `epub:type` i ról ARIA może uporządkować strukturę publikacji, zwiększyć precyzję opisu jej części oraz ułatwić interpretację treści przez technologie wspomagające, szczególnie w publikacjach edukacyjnych i instytucjonalnych.
 
-- poprawna, semantyczna struktura HTML (nagłówki `<h1>–<h6>`, listy, akapity),
-- logiczna kolejność czytania treści,
-- działający dokument nawigacyjny (`nav.xhtml`),
-- teksty alternatywne dla grafik niosących informację,
-- deklaracja języka publikacji,
-- komplet podstawowych metadanych (`dc:title`, `dc:creator`, `dc:language` itd.),
-- brak błędów strukturalnych wykrywanych przez narzędzia walidacyjne (np. EpubCheck),
-- spełnienie wymagań WCAG na poziomie A lub AA (w zależności od kontekstu projektu).
+Dostępność EPUB 3 to dziś nie tylko zgodność ze specyfikacją, ale świadome projektowanie treści cyfrowych tak, aby były realnie dostępne dla wszystkich odbiorców.
 
-To są elementy realnie decydujące o tym, czy plik może zostać uznany za dostępny w sensie technicznym i formalnym.
 
-Zastosowanie dodatkowej semantyki w postaci `epub:type` oraz ARIA role nie jest warunkiem minimalnym dostępności. Są to rozwiązania zalecane, które wzmacniają strukturę dokumentu, poprawiają interpretację treści przez technologie wspomagające oraz podnoszą profesjonalny poziom publikacji — szczególnie w projektach edukacyjnych, naukowych i instytucjonalnych.
-
-Dostępność EPUB 3 to dziś nie tylko kwestia zgodności z wytycznymi, ale również odpowiedzialnego projektowania treści cyfrowych tak, aby mogły z nich korzystać wszystkie grupy odbiorców.
-
-**[Elfa Publikacje](https://elfapublikacje.com/)**
+Sprawdź ofertę **[Elfa Publikacje](https://elfapublikacje.com/)**
