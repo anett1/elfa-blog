@@ -1,6 +1,7 @@
 ---
 title: 'Co to są profile kolorystyczne i jak z nimi pracować w Photoshopie i InDesignie'
 pubDate: '2025-09-04'
+description: 'Czym są profile kolorystyczne RGB i CMYK? Jak je ustawiać w Photoshopie i InDesignie, żeby kolory z ekranu zgadzały się z wydrukiem.'
 ---
 
 ![_publication-project](./_assets/profil-kolorystyczny.jpg)

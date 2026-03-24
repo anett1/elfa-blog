@@ -1,6 +1,7 @@
 ---
 title: 'Z książką na ekranie – codzienne rytuały cyfrowych czytelników'
 pubDate: '2025-08-12'
+description: 'Jakie urządzenia do czytania e-booków wybierają Polacy? Kindle, PocketBook, tablet czy smartfon — przegląd nawyków cyfrowych czytelników.'
 ---
 ![_ebook-readers](./_assets/ebook-readers.jpg)
 

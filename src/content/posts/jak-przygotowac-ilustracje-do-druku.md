@@ -1,6 +1,7 @@
 ---
 title: 'Jak przygotować ilustracje do druku? Przewodnik dla ilustratorów'
 pubDate: '2025-09-04'
+description: 'Przewodnik dla ilustratorów: jak ustawić profile kolorystyczne CMYK, rozdzielczość i tryb koloru, żeby ilustracje wyglądały w druku tak samo jak na ekranie.'
 ---
 
 ![_publication-project](./_assets/profile-kolorystyczne.jpg)

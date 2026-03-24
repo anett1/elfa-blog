@@ -20,21 +20,23 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 
 import { themeConfig } from '@/config'
 
-const { title, pubDate, readingTime, toc } = Astro.props as PostLayoutProps
+const { title, description, pubDate, readingTime, toc } = Astro.props as PostLayoutProps
 
 const postSlug = Astro.url.pathname.split('/').filter(Boolean).pop() || ''
 const ogImage = `/open-graph/${postSlug}.png`
+const resolvedDescription = description ?? themeConfig.site.description
 ---
 
 <BaseLayout
   title={`${title} · ${themeConfig.site.title}`}
-  description={themeConfig.site.description}
+  description={resolvedDescription}
   type="post"
 >
   <BaseHead
     title={`${title} · ${themeConfig.site.title}`}
-    description={themeConfig.site.description}
+    description={resolvedDescription}
     ogImage={ogImage}
+    pubDate={pubDate}
     slot="head"
   />
   <div class="post-container">

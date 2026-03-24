@@ -15,6 +15,16 @@ import { themeConfig } from './src/config'
 import { imageConfig } from './src/utils/image-config'
 import path from 'path'
 import netlify from '@astrojs/netlify'
+import { readFileSync, readdirSync } from 'fs'
+
+// Build a slug → pubDate map by reading post frontmatter at config time
+const postDates: Record<string, Date> = {}
+const postsDir = './src/content/posts'
+for (const file of readdirSync(postsDir).filter((f) => !f.startsWith('_') && f.endsWith('.md'))) {
+  const content = readFileSync(`${postsDir}/${file}`, 'utf-8')
+  const match = content.match(/pubDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/)
+  if (match) postDates[file.replace('.md', '')] = new Date(match[1])
+}
 
 export default defineConfig({
   adapter: netlify(), // Set adapter for deployment, or set `linkCard` to `false` in `src/config.ts`
@@ -38,7 +48,15 @@ export default defineConfig({
       Exclude: [(file) => file.toLowerCase().includes('katex')]
     }),
     mdx(),
-    sitemap()
+    sitemap({
+      serialize(item) {
+        const slugMatch = item.url.match(/\/blog\/([^/]+)\/$/)
+        if (slugMatch && postDates[slugMatch[1]]) {
+          item.lastmod = postDates[slugMatch[1]]
+        }
+        return item
+      }
+    })
   ],
   vite: {
     resolve: {

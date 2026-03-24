@@ -1,6 +1,7 @@
 ---
 title: 'Canva vs Adobe In Design – Dlaczego do książek wybieram In Design'
 pubDate: '2026-01-22'
+description: 'Porównanie Canvy i Adobe InDesign do składu książek. Dlaczego Canva sprawdza się w prostych projektach, a do długich publikacji drukowanych niezbędny jest InDesign?'
 cover: './_assets/canva-vs-adobe-indesign-sklad-ksiazki.png'   # ← opcjonalny tag dla Twojej strony
 ogImage: './_assets/canva-vs-adobe-indesign-sklad-ksiazki.png' # ← najważniejszy tag dla Facebooka
 ---

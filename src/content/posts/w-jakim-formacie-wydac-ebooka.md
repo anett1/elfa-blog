@@ -1,6 +1,7 @@
 ---
 title: 'W jakim formacie wydać e-booka? Przewodnik dla początkujących autorów – i nie tylko'
 pubDate: '2025-08-12'
+description: 'EPUB, PDF, MOBI czy AZW3 — czym różnią się formaty e-booków i który wybrać w zależności od platformy sprzedaży i rodzaju publikacji?'
 cover: './_assets/ebook-formats.png'   # ← opcjonalny tag dla Twojej strony
 ogImage: './_assets/ebook-formats.png' # ← najważniejszy tag dla Facebooka
 ---

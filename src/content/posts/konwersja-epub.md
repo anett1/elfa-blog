@@ -1,6 +1,7 @@
 ---
 title: 'Automatyczna czy kontrolowana konwersja e-booków do formatu EPUB?'
 pubDate: '2025-09-25'
+description: 'Automatyczny konwerter EPUB czy ręczna konwersja? Różnice w jakości, strukturze i czytelności e-booka — co wybrać przy publikacji książki cyfrowej.'
 ---
 
 ![_publication-project](./_assets/konwersja-ebook.jpg)

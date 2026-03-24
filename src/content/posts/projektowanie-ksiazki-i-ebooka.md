@@ -1,6 +1,7 @@
 ---
 title: 'Jak zaprojektować książkę i e-booka, żeby czytało się je z przyjemnością?'
 pubDate: '2025-08-16'
+description: 'Typografia, marginesy, interlinia i układ — jak projekt publikacji wpływa na komfort czytania. Praktyczne zasady składu książki i e-booka.'
 ---
 
 ![_publication-project](./_assets/publication-project.jpg)

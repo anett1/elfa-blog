@@ -2,6 +2,19 @@
   publish = "dist"
   command = "pnpm run build"
 
+# www → non-www canonical redirect
+[[redirects]]
+  from = "https://www.elfapublikacje.com/*"
+  to = "https://elfapublikacje.com/:splat"
+  status = 301
+  force = true
+
+# Sitemap alias (conventional path → actual path)
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+
 # Redirects for Astro static assets
 [[redirects]]
   from = "/_astro/*"
