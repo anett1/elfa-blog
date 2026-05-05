@@ -448,7 +448,7 @@ body.page-home header.site {
   padding: clamp(1rem, 2.2vw, 1.35rem);
   border-top: 1px solid var(--border);
   position: relative;
-  overflow: hidden;
+  /* no overflow:hidden here — card handles clipping; keeping it would trap the ::after overlay */
 }
 
 /* ghost ordinal — matching /oferta/ technique */
@@ -490,7 +490,7 @@ body.page-home header.site {
   font-size: .78rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  font-variant-caps: all-small-caps;
+  text-transform: uppercase;
   text-decoration: none;
   color: var(--text-secondary);
   border-bottom: 1px solid var(--border);
@@ -809,6 +809,10 @@ body.page-home header.site {
 
   .page-home .contact-item {
     grid-template-columns: 4.5rem 1fr;
+  }
+
+  .page-home .contact-note {
+    padding-left: clamp(1.5rem, 3vw, 2.25rem);
   }
 }
 
