@@ -93,6 +93,7 @@ import '@/styles/home.css';
             alt="Skład książek i przygotowanie do druku — publikacyjny układ stron." />
         </figure>
         <div class="offer-body">
+          <span class="card-num" aria-hidden="true">01</span>
           <h3>Studio DTP — skład publikacji i&nbsp;przygotowanie do druku</h3>
           <p>Skład i łamanie książek oraz publikacji drukowanych: paginy, spisy treści, rytm strony, kontrola typografii i pliki gotowe dla drukarni.</p>
           <a class="offer-link" href="/oferta/#dtp">Szczegóły</a>
@@ -105,6 +106,7 @@ import '@/styles/home.css';
             alt="Konwersje e-booków — EPUB i PDF przygotowane do sprzedaży online." />
         </figure>
         <div class="offer-body">
+          <span class="card-num" aria-hidden="true">02</span>
           <h3>Konwersje e-booków — EPUB i&nbsp;PDF do sprzedaży online</h3>
           <p>Konwersja książek do EPUB3 (również Kindle-ready) i przygotowanie sprzedażowego PDF: struktura, style, nawigacja i walidacja.</p>
           <a class="offer-link" href="/oferta/#konwersje">Szczegóły</a>
@@ -117,6 +119,7 @@ import '@/styles/home.css';
             alt="Projekt e-booka — czytelna szata graficzna i układ sprzedażowy." />
         </figure>
         <div class="offer-body">
+          <span class="card-num" aria-hidden="true">03</span>
           <h3>Projekt e-booka — szata graficzna publikacji sprzedażowych</h3>
           <p>E-booki sprzedażowe, leadowe i eksperckie: layout rozdziałów, wyróżnienia, ramki, cytaty, tabele oraz nawigacja — pod czytanie na ekranie.</p>
           <a class="offer-link" href="/oferta/#ebooki">Szczegóły</a>
@@ -129,6 +132,7 @@ import '@/styles/home.css';
             alt="Katalogi i materiały firmowe — projekty do druku i online, w tym prezentacje PowerPoint." />
         </figure>
         <div class="offer-body">
+          <span class="card-num" aria-hidden="true">04</span>
           <h3>Katalogi i materiały firmowe — druk i online (także PowerPoint)</h3>
           <p>Katalogi produktowe, oferty, broszury, raporty oraz prezentacje PowerPoint zgodne z brandingiem — przygotowane do druku i publikacji online.</p>
           <a class="offer-link" href="/oferta/#firmowe">Szczegóły</a>
@@ -141,6 +145,7 @@ import '@/styles/home.css';
             alt="Projekty okładek książek — wariant do druku i e-booka." />
         </figure>
         <div class="offer-body">
+          <span class="card-num" aria-hidden="true">05</span>
           <h3>Projekty okładek — druk i e-book</h3>
           <p>Okładki książek i e-booków: typografia, kompozycja, przygotowanie do druku oraz wersje pod platformy. Czytelność również w miniaturach.</p>
           <a class="offer-link" href="/oferta/#okladki">Szczegóły</a>
@@ -155,6 +160,7 @@ import '@/styles/home.css';
       alt="Korekta i redakcja tekstów — profesjonalne przygotowanie publikacji do druku i e-booka." />
   </figure>
   <div class="offer-body">
+    <span class="card-num" aria-hidden="true">06</span>
     <h3>Korekta i redakcja tekstów</h3>
     <p>Profesjonalna korekta językowa i redakcja tekstu przed i po składzie: poprawność, spójność stylistyczna, logika wywodu oraz przygotowanie treści do dalszej pracy DTP i konwersji e-booka.</p>
     <a class="offer-link" href="/oferta/#korekta">Szczegóły</a>
@@ -187,41 +193,35 @@ import '@/styles/home.css';
     <header class="contact-head">
       <p class="kicker">Kontakt</p>
       <h2 id="kontakt-title">Porozmawiajmy o Twojej publikacji</h2>
+      <p class="contact-tagline">Z przyjemnością odpowiemy na pytania i przygotujemy indywidualną wycenę.</p>
     </header>
 
     <div class="contact-body">
-      <p class="lead">
-        Osoby zainteresowane współpracą serdecznie zapraszamy do kontaktu.
-        Z przyjemnością odpowiemy na pytania i przygotujemy indywidualną wycenę.
-      </p>
-
-      <p>
-        Aby się z nami skontaktować, możesz:
-      </p>
-
-      <ul class="contact-list">
-        <li>
-          napisać wiadomość e-mail:
-          <a href="mailto:aneta.jagla@elfapublikacje.com">
+      <div class="contact-items">
+        <div class="contact-item">
+          <span class="contact-label">E-mail</span>
+          <a href="mailto:aneta.jagla@elfapublikacje.com" class="contact-value">
             aneta.jagla@elfapublikacje.com
           </a>
-        </li>
+        </div>
 
-        <li>
-          zadzwonić:
-          <a href="tel:+48513090196">513 090 196</a>
-        </li>
+        <div class="contact-item">
+          <span class="contact-label">Telefon</span>
+          <a href="tel:+48513090196" class="contact-value">513 090 196</a>
+        </div>
 
-        <li class="social">
-          odwiedzić nasze profile:
-          <a href="https://www.facebook.com/elfapublikacje" target="_blank" rel="noopener" aria-label="Facebook Elfa Publikacje">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a href="https://www.instagram.com/elfapublikacje/" target="_blank" rel="noopener" aria-label="Instagram Elfa Publikacje">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
+        <div class="contact-item">
+          <span class="contact-label">Social</span>
+          <div class="contact-social">
+            <a href="https://www.facebook.com/elfapublikacje" target="_blank" rel="noopener">
+              <i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/elfapublikacje/" target="_blank" rel="noopener">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
 
       <div class="contact-note">
         <h3>Dlaczego warto?</h3>
